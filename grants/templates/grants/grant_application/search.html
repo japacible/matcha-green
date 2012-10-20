@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link href="../../assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen" />
-</head>
-<body>
-	<!--TODO: Add default 'if nothing selected' then ALL VALUES OK!-->
-	<form action="#"> <!--TODO: Fill in action-->
-	  <legend>Search Page</legend>
-	  	<label>Year</label>
-	  	<input type="number" placeholder="" min="1978" max="2012" name="year">
-	  
-	  	<label>Location Type</label>
-		<label class="radio">
-		  <input type="radio" name="location_type" id="rural_radio" value="rural">
-		  Rural
-		</label>
-		<label class="radio">
-		  <input type="radio" name="location_type" id="urban_radio" value="urban">
-		  Urban
-		</label>
+    <head>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <!--TODO: Add default 'if nothing selected' then ALL VALUES OK!-->
+        <form action="#"> <!--TODO: Fill in action-->
+          <legend>Search Page</legend>
+            <label>Year</label>
+            <input type="number" placeholder="" min="1978" max="2012" name="year">
+          
+            <label>Location Type</label>
+            <label class="radio">
+              <input type="radio" name="location_type" id="rural_radio" value="rural">
+              Rural
+            </label>
+            <label class="radio">
+              <input type="radio" name="location_type" id="urban_radio" value="urban">
+              Urban
+            </label>
 
-		<label>Diverse Leadership
-		<label class="radio">
-		  <input type="radio" name="diverse" id="diverse_yes" value="yes">
-		  Yes
-		</label>
-		<label class="radio">
-		  <input type="radio" name="diverse" id="diverse_no" value="no">
-		  No
-		</label>
-		</label>
+            <label>Diverse Leadership
+            <label class="radio">
+              <input type="radio" name="diverse" id="diverse_yes" value="yes">
+              Yes
+            </label>
+            <label class="radio">
+              <input type="radio" name="diverse" id="diverse_no" value="no">
+              No
+            </label>
+            </label>
 
-		<label>State</label>
-		<select multiple="multiple" name="state">
-			<option value="idaho">Idaho</option>
-			<option value="oregon">Oregon</option>
-			<option value="montana">Montana</option>
-			<option value="washington">Washington</option>
-			<option value="wyoming">Wyoming</option>
-		</select>
+            <label>State</label>
+            <select multiple="multiple" name="state">
+                <option value="idaho">Idaho</option>
+                <option value="oregon">Oregon</option>
+                <option value="montana">Montana</option>
+                <option value="washington">Washington</option>
+                <option value="wyoming">Wyoming</option>
+            </select>
 
-		<label>City</label>
-		<input type="text" name="city">
+            <label>City</label>
+            <input type="text" name="city">
 
-		<label>Grantee</label>
-		<input type="text" name="grantee">
+            <label>Grantee</label>
+            <input type="text" name="grantee">
 
-		<label>Giving Project Type</label>
-		<select multiple="multiple" name="project_type">
-			<option value="civic_action_project">Civic Action Project</option>
-			<option value="criminal_justice_giving_project">Criminal Justice Giving Project</option>
-			<option value="economic_justice_giving_project">Economic Justice Giving Project</option>
-			<option value="lgbtq_giving_project">LGBTQ Giving Project</option>
-			<option value="montana_giving_project">Montana Giving Project</option>
-			<option value="next_generation_giving_project">Next Generation Giving Project</option>
-			<option value="social_justice_giving_project_portland">Social Justice Giving Project (Portland)</option>
-		</select>
+            <label>Giving Project Type</label>
+            <select multiple="multiple" name="project_type">
+                <option value="civic_action_project">Civic Action Project</option>
+                <option value="criminal_justice_giving_project">Criminal Justice Giving Project</option>
+                <option value="economic_justice_giving_project">Economic Justice Giving Project</option>
+                <option value="lgbtq_giving_project">LGBTQ Giving Project</option>
+                <option value="montana_giving_project">Montana Giving Project</option>
+                <option value="next_generation_giving_project">Next Generation Giving Project</option>
+                <option value="social_justice_giving_project_portland">Social Justice Giving Project (Portland)</option>
+            </select>
 
-		<label>Decision</label>
-		<select multiple="multiple" name="decision">
-			<option value="full_grant">Full Grant</option>
-			<option value="partial_grant">Partial Grant</option>
-			<option value="pre_screen">Pre-Screened</option>
-			<option value="site_visit">Site Visit</option>
-			<option value="screened_out">Screened Out</option>
-		</select>
+            <label>Decision</label>
+            <select multiple="multiple" name="decision">
+                <option value="full_grant">Full Grant</option>
+                <option value="partial_grant">Partial Grant</option>
+                <option value="pre_screen">Pre-Screened</option>
+                <option value="site_visit">Site Visit</option>
+                <option value="screened_out">Screened Out</option>
+            </select>
 
-		<!--For future use
-		<label>Issue Area</label>
-		<label>Organizing Style</label>
-		<label>Diversity Criteria</label>
-		-->
+            <!--For future use
+            <label>Issue Area</label>
+            <label>Organizing Style</label>
+            <label>Diversity Criteria</label>
+            -->
 
-		<br/>
-	  	<button type="submit" class="btn" value="Submit form">Submit</button>
-	</form>
-</body>
-
+            <br/>
+            <button type="submit" class="btn" value="Submit form">Submit</button>
+        </form>
+    </body>
+</html>
