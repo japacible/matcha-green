@@ -122,18 +122,15 @@ def search_grant_applications(options):
     logging.info(results)
     logging.info(options)
     # TODO: The other params should actually affect the search results!!
-
-    # results = results.filter(organization__city__contains=options['city'])
-    # results = results.filter(organization__state__contains=options['state'])
-    # Similar thing for giving project type(WHAT KEY IS THIS!?!?)
-    # results = results.filter(grant_cycle__title__contains='')
-    # results = results.filter(submission_time__year=options['year'])
-
     if options.get('city'):
         results = results.filter(organization__city__contains=options['city'])
 
     if options.get('state'):
         results = results.filter(organization__state__contains=options['state'])
+    
+    results = results.filter(organization__city__contains=options['city'])
+    results = results.filter(organization__state__contains=options['state'])
+    #results = results.filter(organization__type__contains=options['project_type'])
 
     # Similar thing for giving project type(WHAT KEY IS THIS!?!?\
     if options.get('grant_status'):
