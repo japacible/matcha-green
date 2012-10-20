@@ -7,7 +7,7 @@
     <body>
         <ul>
         {% for t in grant_applications %}
-            <li>{{ t.mission }}</li>
+            <li>{{ t.organization.name }}</li>
         {% endfor %}
         </ul>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
