@@ -17,3 +17,7 @@
 .input-title{
     font-size: 14pt;
 }
+
+.input-container {
+    border-bottom: 1px solid black;
+}
