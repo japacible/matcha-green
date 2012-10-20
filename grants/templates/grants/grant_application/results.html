@@ -29,7 +29,7 @@
                     <tbody id="results">
                         {% for t in grant_applications %}
                         <tr>
-                            <td scope="col" class="report_column"><a href="#">View Grant</a></td>
+                            <td scope="col" class="report_column"><a href="{{ t.pk }}">View Grant</a></td>
                             <td scope="col" class="report_column">{{ t.submission_time }}</td>
                             <td scope="col" class="report_column">{{ t.organization.name }}</td>
                             <td scope="col" class="report_column">{{ t.city }}</td>

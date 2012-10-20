@@ -9,6 +9,7 @@
     </head>
     <body>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="/static/js/script.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
         <!--TODO: Add default 'if nothing selected' then ALL VALUES OK!-->
         <div class="container">
@@ -31,16 +32,16 @@
                     <div class="span3"></div>
                     <div class="span3">
                         <label class="input-title">City</label>
-                        <input type="text" name="city">
+                        <input id="city-textarea" type="text" name="city">
                     </div>
                     <div class="span3">
                         <label class="input-title">State</label>
-                        <label class="checkbox">
-                            <input type="checkbox" name="state" value="idaho">Idaho</input><br />
-                            <input type="checkbox" name="state" value="montana">Montana</input><br />
-                            <input type="checkbox" name="state" value="oregon">Oregon</input><br />
-                            <input type="checkbox" name="state" value="washington">Washington</input><br />
-                            <input type="checkbox" name="state" value="wyoming">Wyoming</input>
+                        <label id="state-label" class="radio">
+                            <input type="radio" name="state" value="idaho">Idaho</input><br />
+                            <input type="radio" name="state" value="montana">Montana</input><br />
+                            <input type="radio" name="state" value="oregon">Oregon</input><br />
+                            <input type="radio" name="state" value="washington">Washington</input><br />
+                            <input type="radio" name="state" value="wyoming">Wyoming</input>
                         </label>
                     </div>
                     <div class="span3"></div>
@@ -54,24 +55,24 @@
                     <div class="span3"></div>
                     <div class="span3">
                         <label class="input-title">Giving Project Type</label>
-                        <label class="checkbox">
-                            <input type="checkbox" name="project_type" value="civic_action_project">Civic Action Project<br />
-                            <input type="checkbox" name="project_type" value="criminal_justice_giving_project">Criminal Justice Giving Project<br />
-                            <input type="checkbox" name="project_type" value="economic_justice_giving_project">Economic Justice Giving Project<br />
-                            <input type="checkbox" name="project_type" value="lgbtq_giving_project">LGBTQ Giving Project<br />
-                            <input type="checkbox" name="project_type" value="montana_giving_project">Montana Giving Project<br />
-                            <input type="checkbox" name="project_type" value="next_generation_giving_project">Next Generation Giving Project<br />
-                            <input type="checkbox" name="project_type" value="social_justice_giving_project_portland">Social Justice Giving Project (Portland)
+                        <label class="radio">
+                            <input type="radio" name="project_type" value="civic_action_project">Civic Action Project<br />
+                            <input type="radio" name="project_type" value="criminal_justice_giving_project">Criminal Justice Giving Project<br />
+                            <input type="radio" name="project_type" value="economic_justice_giving_project">Economic Justice Giving Project<br />
+                            <input type="radio" name="project_type" value="lgbtq_giving_project">LGBTQ Giving Project<br />
+                            <input type="radio" name="project_type" value="montana_giving_project">Montana Giving Project<br />
+                            <input type="radio" name="project_type" value="next_generation_giving_project">Next Generation Giving Project<br />
+                            <input type="radio" name="project_type" value="social_justice_giving_project_portland">Social Justice Giving Project (Portland)
                         </label>
                     </div>
                     <div class="span3">
                         <label class="input-title">Grant Status</label>
-                        <label class="checkbox">
-                            <input type="checkbox" name="grant_status" value="full_grant">Full Grant</input><br />
-                            <input type="checkbox" name="grant_status" value="partial_grant">Partial Grant</input><br />
-                            <input type="checkbox" name="grant_status" value="pre_screen">Pre-Screened</input><br />
-                            <input type="checkbox" name="grant_status" value="site_visit">Site Visit</input><br />
-                            <input type="checkbox" name="grant_status" value="screened_out">Screened Out</input>
+                        <label class="radio">
+                            <input type="radio" name="grant_status" value="full_grant">Full Grant</input><br />
+                            <input type="radio" name="grant_status" value="partial_grant">Partial Grant</input><br />
+                            <input type="radio" name="grant_status" value="pre_screen">Pre-Screened</input><br />
+                            <input type="radio" name="grant_status" value="site_visit">Site Visit</input><br />
+                            <input type="radio" name="grant_status" value="screened_out">Screened Out</input>
                         </label>
                     </div>
                     <div class="span3"></div>
