@@ -3,16 +3,20 @@
 <html>
     <head>
         <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
-        <div class="page-header">
-            <h1>{{ grant_application.organization }} <small>{{ grant_application.submission_time }}</small></h1>
+        <div class="container">
+            <div class="page-header">
+                <h1>{{ grant_application.organization }} // <small>{{ grant_application.city }}, {{ grant_application.state }}</small></h1>
+            </div>
+            <h2>Giving Type // <span>{{ grant_application.grant_cycle.givingproject_set.all }}</span></h2>
+            <h2>Grant Status // <span>{{ grant_application.get_screening_status_display }}</span></h2>
+            <h2>People of Color // <span>{{ grant_application.scoring_bonus_poc }}</span></h2>
+            <h2>Submission Date // <span>{{ grant_application.submission_time }}</span></h2>
         </div>
-        <h2>{{ grant_application.city }}, {{ grant_application.state }}</h2>
-        <h2>Giving Type: {{ grant_application.grant_cycle.givingproject_set.all }}</h2>
-        <h2>Grant Status: {{ grant_application.get_screening_status_display }}</h2>
-        <h2>People of Color: {{ grant_application.scoring_bonus_poc }}</h2>
     </body>
 </html>
