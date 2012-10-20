@@ -121,7 +121,7 @@ def search_grant_applications(options):
 
     logging.info("\033[31m")
     # TODO: DON'T LET THIS PULL DOWN THE WHOLE DB
-    results = GrantApplication.objects.distinct()
+    results = GrantApplication.objects.distinct().select_related('organization', 'grant_cycle__givingproject_set')
     if 'grantee' in options:
         results = results.filter(organization__name__contains=options['grantee'])
     # TODO: The other params should actually affect the search results!!
