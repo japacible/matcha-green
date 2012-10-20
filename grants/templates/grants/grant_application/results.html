@@ -1,9 +1,15 @@
 <!DOCTYPE>
+<!-- Python vars: grant_applications -->
 <html>
     <head>
         <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <ul>
+        {% for t in grant_applications %}
+            <li>{{ t.mission }}</li>
+        {% endfor %}
+        </ul>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
         <h1>Results</h1>
