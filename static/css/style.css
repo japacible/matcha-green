@@ -67,3 +67,18 @@ label {
     -o-transition: background-position 0.1s linear;
     transition: background-position 0.1s linear;
 }
+
+.report_column {
+    text-decoration: underline;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+.table th {
+    font-weight: normal !important;
+}
+
+tr {
+    text-align: center;
+}
