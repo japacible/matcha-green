@@ -12,7 +12,6 @@
                     <tr>
                         <th scope="col">Submission Date</th>
                         <th scope="col">Organization</th>
-                        <th scope="col">Fund Date</th>
                         <th scope="col">Amount Funded</th>
                         <th scope="col">City</th>
                         <th scope="col">State</th>
@@ -37,7 +36,6 @@
                     <!--Figure out correct attributes-->
                     $("<td><span>" + object.fields.submission_time + "</td></span>").appendTo(row);
                     $("<td><span>" + object.fields.organization + "</td></span>").appendTo(row);
-                    $("<td><span>" + object.fields.grant_request + "</td></span>").appendTo(row);
                     $("<td><span>" + object.fields.project_budget + "</td></span>").appendTo(row);
                     $("<td><span>" + object.fields.city + "</td></span>").appendTo(row);
                     $("<td><span>" + object.fields.state + "</td></span>").appendTo(row);
