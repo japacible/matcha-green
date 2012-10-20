@@ -9,14 +9,34 @@
         <!--TODO: Add default 'if nothing selected' then ALL VALUES OK!-->
         <form action="#"> <!--TODO: Fill in action-->
           <legend>Search Page</legend>
+            <div class="row">
+                <div class="span4">
+                    <label>Grantee</label>
+                    <input type="text" name="grantee">
+                </div>
+                <div class="span4">
+                    <label>City</label>
+                    <input type="text" name="city">
+                </div>
+                <div class="span4">
+                    <label>State</label>
+                    <select multiple="multiple" name="state">
+                        <option value="idaho">Idaho</option>
+                        <option value="oregon">Oregon</option>
+                        <option value="montana">Montana</option>
+                        <option value="washington">Washington</option>
+                        <option value="wyoming">Wyoming</option>
+                    </select>
+                </div>
+            </div>
             <label>Year</label>
             <input type="number" placeholder="" min="1978" max="2012" name="year">
           
-            <label>Location Type</label>
+            <!--<label>Location Type</label>
             <label class="radio">
               <input type="radio" name="location_type" id="rural_radio" value="rural">
               Rural
-            </label>
+          </label>-->
             <label class="radio">
               <input type="radio" name="location_type" id="urban_radio" value="urban">
               Urban
@@ -32,21 +52,6 @@
               No
             </label>
             </label>
-
-            <label>State</label>
-            <select multiple="multiple" name="state">
-                <option value="idaho">Idaho</option>
-                <option value="oregon">Oregon</option>
-                <option value="montana">Montana</option>
-                <option value="washington">Washington</option>
-                <option value="wyoming">Wyoming</option>
-            </select>
-
-            <label>City</label>
-            <input type="text" name="city">
-
-            <label>Grantee</label>
-            <input type="text" name="grantee">
 
             <label>Giving Project Type</label>
             <select multiple="multiple" name="project_type">
