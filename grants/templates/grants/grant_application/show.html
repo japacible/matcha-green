@@ -11,9 +11,8 @@
             <h1>{{ grant_application.organization }} <small>{{ grant_application.submission_time }}</small></h1>
         </div>
         <h2>{{ grant_application.city }}, {{ grant_application.state }}</h2>
-        <h2>Giving Type: {{ grant_application.grant_cycle.project_set }}</h2>
-        <h2>Grant Status: {{ grant_application.screening_status }}</h2>
+        <h2>Giving Type: {{ grant_application.grant_cycle.givingproject_set.all }}</h2>
+        <h2>Grant Status: {{ grant_application.get_screening_status_display }}</h2>
         <h2>People of Color: {{ grant_application.scoring_bonus_poc }}</h2>
-        <h2>{{ grantee.name }}</h2>
     </body>
 </html>
