@@ -113,24 +113,41 @@ def export(qs, fields=None):
 
 # MISC
 def search_grant_applications(options):
-    logging.info(options)
+    logging.info("\033[31m")
     # TODO: DON'T LET THIS PULL DOWN THE WHOLE DB
     results = GrantApplication.objects.filter()
+    logging.info(results)
     if 'grantee' in options:
         results = results.filter(organization__name__contains=options['grantee'])
-
+    logging.info(results)
+    logging.info(options)
     # TODO: The other params should actually affect the search results!!
+
     # results = results.filter(organization__city__contains=options['city'])
     # results = results.filter(organization__state__contains=options['state'])
     # Similar thing for giving project type(WHAT KEY IS THIS!?!?)
     # results = results.filter(grant_cycle__title__contains='')
     # results = results.filter(submission_time__year=options['year'])
 
-    results2 = []
-    for r in results[:]:
-        pts = r.grant_cycle.givingproject_set.all()
-        for pt in pts[:]:
-            if pt.title == options['project_type']:
-                results2.append(r)
+    if options.get('city'):
+        results = results.filter(organization__city__contains=options['city'])
 
-    return results2
+    if options.get('state'):
+        results = results.filter(organization__state__contains=options['state'])
+
+    # Similar thing for giving project type(WHAT KEY IS THIS!?!?\
+    if options.get('grant_status'):
+        results = results.filter(screening_status=options['grant_status'])
+    if options.get('year'):
+        results = results.filter(submission_time__year=options['year'])
+    logging.info("\033[0m")
+
+    if options.get('project_type'):
+        results2 = []
+        for r in results[:]:
+            pts = r.grant_cycle.givingproject_set.all()
+            for pt in pts[:]:
+                if pt.title == options['project_type']:
+                    results2.append(r)
+        return results2
+    return results
