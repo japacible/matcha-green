@@ -60,6 +60,9 @@ urlpatterns = patterns('',
     (r'^grants/api/grantee/(?P<grantee_id>\d+)/$',
         'grants.search.api_show_grantee'),
 
+    (r'^grants/api/grant_cycle/(?P<grant_cycle_id>\d+)/$',
+        'grants.search.api_show_grant_cycle'),
+
     #Reporting URLs should start with /grants
 
 ## SCORING ##

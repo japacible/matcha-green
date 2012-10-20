@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.core import serializers
 from django.http import HttpResponse
+from django.utils import simplejson
 import json
 from models import *
 
@@ -36,3 +37,10 @@ def api_show_grantee(request, grantee_id):
     except Grantee.DoesNotExist:
         return HttpResponse(json.dumps(NO_EXIST_OBJECT))
     return HttpResponse(serializers.serialize('json', [grantee]))
+
+def api_show_grant_cycle(request, grant_cycle_id):
+    try:
+        grant_cycle = GrantCycle.objects.get(id=grant_cycle_id)
+    except GrantCycle.DoesNotExist:
+        return HttpResponse(json.dumps(NO_EXIST_OBJECT))
+    return HttpResponse(serializers.serialize('json', [grant_cycle]))
