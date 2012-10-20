@@ -125,7 +125,7 @@ def search_grant_applications(options):
     
     results = results.filter(organization__city__contains=options['city'])
     results = results.filter(organization__state__contains=options['state'])
-    results = results.filter(organization__type__contains=options['project_type'])
+    #results = results.filter(organization__type__contains=options['project_type'])
 
     # Similar thing for giving project type(WHAT KEY IS THIS!?!?\
     results = results.filter(screening_status=options['grant_status'])
