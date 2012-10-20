@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.utils import simplejson
 import json
 import csv
+import datetime
 import logging
 from models import *
 from django.template.defaultfilters import slugify
@@ -125,20 +126,24 @@ def search_grant_applications(options):
         results = results.filter(state__in=options.getlist('state'))#options.getlist('state'))
     if options.get('grant_status'):
         results = results.filter(screening_status__in=options.getlist('grant_status'))
-    if options.get('year'):
-        results = results.filter(submission_time__year=options['year'])
+    if options.get('year_start'):
+        ys = datetime.date(int(options['year_start']), 1, 1)
+        results = results.filter(submission_time__gte=ys)
+    if options.get('year_end'):
+        ye = datetime.date(int(options['year_end']), 12, 31)
+        results = results.filter(submission_time__lte=ye)
     logging.info("\033[0m")
 
     # Need to pick out all the project types that match query
     # and sticks in another array
     # Ugly way of doing it cause Database is set up inconveniently D:
     # ADD THE PROJECT TYPE TO THE GRANT_APPLICATION MODELLLL!!!! D:<
-    if options.get('project_type'):
+    if options.get('giving_project'):
         results2 = []
         for r in results[:]:
             pts = r.grant_cycle.givingproject_set.all()
             for pt in pts[:]:
-                if pt.title in options.getlist('project_type'):
+                if pt.title in options.getlist('giving_project'):
                     results2.append(r)
                     break
         return results2
