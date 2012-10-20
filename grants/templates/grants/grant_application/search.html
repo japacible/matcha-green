@@ -1,1 +1,79 @@
-<h1>Search Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="../../assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen" />
+</head>
+<body>
+	<form>
+	  <legend>Search Page</legend>
+	  
+	  	<!--min year ? max year = present-->
+	  	<label>Year</label>
+	  	<input type="number" placeholder="" min="1978" max="2012" maxlength="4">
+	  
+	  	<label>Location Type</label>
+		<label class="radio">
+		  <input type="radio" name="location_type" id="rural_radio" value="">
+		  Rural
+		</label>
+		<label class="radio">
+		  <input type="radio" name="location_type" id="urban_radio" value="">
+		  Urban
+		</label>
+
+
+		<label>Diverse Leadership
+		<input type="checkbox" value="">
+		</label>
+
+		<!--multiple choices-->
+		<label>State</label>
+		<select multiple="multiple">
+			<option>Idaho</option>
+			<option>Oregon</option>
+			<option>Montana</option>
+			<option>Washington</option>
+			<option>Wyoming</option>
+		</select>
+
+		<!--multiple choices-->
+		<label>City</label>
+		<input type="text">
+
+		<!--multiple choices-->
+		<label>Grantee</label>
+		<input type="text">
+
+		<!--multiple choices-->
+		<label>Giving Project Type</label>
+		<select multiple="multiple">
+			<option>Civic Action Project</option>
+			<option>Criminal Justice Giving Project</option>
+			<option>Economic Justice Giving Project</option>
+			<option>LGBTQ Giving Project</option>
+			<option>Montana Giving Project</option>
+			<option>Next Generation Giving Project</option>
+			<option>Social Justice Giving Project (Portland)</option>
+		</select>
+
+		<!--multiple choices-->
+		<label>Decision</label>
+		<select multiple="multiple">
+			<option>Full Grant</option>
+			<option>Partial Grant</option>
+			<option>Pre-Screened</option>
+			<option>Site Visit</option>
+			<option>Screened Out</option>
+		</select>
+
+		<!--For future use
+		<label>Issue Area</label>
+		<label>Organizing Style</label>
+		<label>Diversity Criteria</label>
+		-->
+
+		<br/>
+	  	<button type="submit" class="btn">Submit</button>
+	</form>
+</body>
+
