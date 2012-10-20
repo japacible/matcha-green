@@ -13,7 +13,13 @@
             <div class="page-header">
                 <h1>{{ grant_application.organization }} // <small>{{ grant_application.city }}, {{ grant_application.state }}</small></h1>
             </div>
-            <h2>Giving Type // <span>{{ grant_application.grant_cycle.givingproject_set.all }}</span></h2>
+            <h2>Giving Project // 
+                <span>
+                    {% for gp in grant_application.grant_cycle.givingproject_set.all %}
+                            {{ gp.title }}{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                </span>
+            </h2>
             <h2>Grant Status // <span>{{ grant_application.get_screening_status_display }}</span></h2>
             <h2>People of Color // <span>{{ grant_application.scoring_bonus_poc }}</span></h2>
             <h2>Submission Date // <span>{{ grant_application.submission_time }}</span></h2>
