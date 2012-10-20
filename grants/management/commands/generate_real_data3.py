@@ -56,6 +56,9 @@ class Command(BaseCommand):
         b.support_type = 'General support'
         b.project_title = "A better tomorrow"
         
+        b.mission = "LGBTQ Giving Project"
+
+        
         b.grant_period = "Spring"
         b.start_year = 2005
         b.budget_last = 1000000
