@@ -10,6 +10,7 @@ import json
 import csv
 import datetime
 import logging
+import string
 from models import *
 from django.template.defaultfilters import slugify
 from django.db.models.loading import get_model
@@ -25,7 +26,9 @@ def search(request):
 def results(request):
     grant_applications = search_grant_applications(request.REQUEST)
     template = loader.get_template('grants/grant_application/results.html')
-    context  = Context({'grant_applications': grant_applications, })
+    url = request.get_full_path()
+    url = string.replace(url, "grants/", "grants/csv/")
+    context  = Context({'grant_applications': grant_applications, 'csv' : url})
     return HttpResponse(template.render(context))
 
 
