@@ -18,13 +18,25 @@ def search(request):
     return render_to_response('grants/grant_application/search.html', context_instance=RequestContext(request))
 
 def results(request):
-    return render_to_response('grants/grant_application/results.html', context_instance=RequestContext(request))
+    grant_applications = GrantApplication.objects.all()
+    template = loader.get_template('grants/grant_application/results.html')
+    context  = Context({
+        'grant_applications': grant_applications, })
+    return HttpResponse(template.render(context))
+
 
 def show(request, grant_application_id):
-    return render_to_response('grants/grant_application/show.html', {'grant':
-           grant_application_id}, context_instance=RequestContext(request))
+    grant_application = GrantApplication.objects.get(id=grant_application_id)
+    grantee  = grant_application.organization
+    template = loader.get_template('grants/grant_application/show.html')
+    context  = Context({
+        'grant_application': grant_application,
+        'grantee': grantee,
+    })
+    return HttpResponse(template.render(context))
 
-def api_show(request, grant_application_id):
+# These Endpoints return serialized json
+def api_show_grant_application(request, grant_application_id):
     try:
         grant_application = GrantApplication.objects.get(id=grant_application_id)
     except GrantApplication.DoesNotExist:

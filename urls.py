@@ -49,13 +49,14 @@ urlpatterns = patterns('',
     
 ## GRANTS - REPORTING ##
   
-    (r'^grants/grant_application/', 'grants.search.search'),
+    (r'^grants/grant_application/$', 'grants.search.search'),
     (r'^grants/grant_application/search', 'grants.search.search'),
     (r'^grants/grant_application/results', 'grants.search.results'),
     (r'^grants/grant_application/(?P<grant_application_id>\d+)/$', 'grants.search.show'),
 
+    # These endpoints return the serialized json form of these models
     (r'^grants/api/grant_application/(?P<grant_application_id>\d+)/$',
-        'grants.search.api_show'),
+        'grants.search.api_show_grant_application'),
 
     (r'^grants/api/grantee/(?P<grantee_id>\d+)/$',
         'grants.search.api_show_grantee'),

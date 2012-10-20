@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Python vars: grant_application, grantee -->
 <html>
     <head>
         <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -6,6 +7,7 @@
     <body>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
-        <h1>{{ grant }}</h1>
+        <h1>{{ grant_application.mission }}</h1>
+        <h1>{{ grantee.name }}</h1>
     </body>
 </html>
