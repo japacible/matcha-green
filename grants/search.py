@@ -115,19 +115,16 @@ def export(qs, fields=None):
 def search_grant_applications(options):
     logging.info("\033[31m")
     # TODO: DON'T LET THIS PULL DOWN THE WHOLE DB
-    results = GrantApplication.objects.filter()
-    logging.info(results)
+    results = GrantApplication.objects.distinct()
     if 'grantee' in options:
         results = results.filter(organization__name__contains=options['grantee'])
-    logging.info(results)
-    logging.info(options)
     # TODO: The other params should actually affect the search results!!
     if options.get('city'):
-        results = results.filter(organization__city__contains=options['city'])
+        results = results.filter(city=options['city'])
     if options.get('state'):
-        results = results.filter(organization__state__contains=options['state'])
+        results = results.filter(state__in=options.getlist('state'))#options.getlist('state'))
     if options.get('grant_status'):
-        results = results.filter(screening_status=options['grant_status'])
+        results = results.filter(screening_status__in=options.getlist('grant_status'))
     if options.get('year'):
         results = results.filter(submission_time__year=options['year'])
     logging.info("\033[0m")
@@ -135,12 +132,14 @@ def search_grant_applications(options):
     # Need to pick out all the project types that match query
     # and sticks in another array
     # Ugly way of doing it cause Database is set up inconveniently D:
+    # ADD THE PROJECT TYPE TO THE GRANT_APPLICATION MODELLLL!!!! D:<
     if options.get('project_type'):
         results2 = []
         for r in results[:]:
             pts = r.grant_cycle.givingproject_set.all()
             for pt in pts[:]:
-                if pt.title == options['project_type']:
+                if pt.title in options.getlist('project_type'):
                     results2.append(r)
+                    break
         return results2
     return results
