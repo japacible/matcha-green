@@ -3,19 +3,11 @@
 <html>
     <head>
         <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="/static/css/style.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <ul>
-        {% for t in grant_applications %}
-            <li>{{ t.organization.name }}</li>
-        {% endfor %}
-        </ul>
-
-
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
         <div class="container">
@@ -24,16 +16,27 @@
             </div>
                 <table class="table table-hover">
                     <thead>
-                        <tr>
-                            <th scope="col" class="report_column">Submission Date</th>
-                            <th scope="col" class="report_column">Organization</th>
-                            <th scope="col" class="report_column">Amount Funded</th>
-                            <th scope="col" class="report_column">City</th>
-                            <th scope="col" class="report_column">State</th>
-                            <th scope="col" class="report_column">Led by Color</th>
-                        </tr>
+                            <tr>
+                                <th scope="col" class="report_column"></th>
+                                <th scope="col" class="report_column">Submission Date</th>
+                                <th scope="col" class="report_column">Organization</th>
+                                <th scope="col" class="report_column">City</th>
+                                <th scope="col" class="report_column">State</th>
+                                <th scope="col" class="report_column">Led by Color</th>
+                            </tr>
+                        </a>
                     </thead>
                     <tbody id="results">
+                        {% for t in grant_applications %}
+                        <tr>
+                            <td scope="col" class="report_column"><a href="#">View Grant</a></td>
+                            <td scope="col" class="report_column">{{ t.submission_time }}</td>
+                            <td scope="col" class="report_column">{{ t.organization.name }}</td>
+                            <td scope="col" class="report_column">{{ t.city }}</td>
+                            <td scope="col" class="report_column">{{ t.state }}</td>
+                            <td scope="col" class="report_column">{{ t.scoring_bonus_poc }}</td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             <script>
