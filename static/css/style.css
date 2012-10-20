@@ -1,9 +1,12 @@
+body {
+    font-family: "Carrois Gothic SC";
+}
+
 .report-value {
     color:#686868;
 }
 
 #search-form {
-    margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
 
@@ -17,8 +20,17 @@
     padding-bottom: 10px;
 }
 
-.input-title{
-    font-size: 16pt;
+label {
+    font-size: 13pt;
+}
+
+.input-title {
+    text-decoration: underline;
+    font-size: 17pt;
+}
+
+.input-title label {
+    text-decoration: none;
 }
 
 .input-separator div {
@@ -40,4 +52,18 @@
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
     filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.btn:hover {
+    color: #333333;
+    text-decoration: none;
+    background-color: #0281ba;
+    *background-color: #B1D2E1;
+    /* Buttons in IE7 don't get borders, so darken on hover */
+
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
 }
