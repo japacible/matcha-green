@@ -55,6 +55,9 @@ urlpatterns = patterns('',
     (r'^grants/grant_application/(?P<grant_application_id>\d+)/$', 'grants.search.show'),
 
     # These endpoints return the serialized json form of these models
+    (r'^grants/api/grant_application/results',
+            'grants.search.api_grant_applications'),
+
     (r'^grants/api/grant_application/(?P<grant_application_id>\d+)/$',
         'grants.search.api_show_grant_application'),
 
@@ -63,6 +66,10 @@ urlpatterns = patterns('',
 
     (r'^grants/api/grant_cycle/(?P<grant_cycle_id>\d+)/$',
         'grants.search.api_show_grant_cycle'),
+
+    # Endpoint for csv
+    (r'^grants/csv/grant_application/(?P<grant_application_id>\d+)/$',
+        'grants.search.csv_show_grant_application'),
 
     #Reporting URLs should start with /grants
 
