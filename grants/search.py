@@ -114,6 +114,11 @@ def export(qs, fields=None):
 
 # MISC
 def search_grant_applications(options):
+    # Error checking!
+    if options.get('year_start') > options.get('year_end'):
+        logging.warning("Start date is ahead of end date")
+        return []
+
     logging.info("\033[31m")
     # TODO: DON'T LET THIS PULL DOWN THE WHOLE DB
     results = GrantApplication.objects.distinct()
