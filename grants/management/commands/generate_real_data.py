@@ -48,7 +48,8 @@ class Command(BaseCommand):
         b.amount_requested = 28989928
         b.support_type = 'General support'
         b.project_title = "title1"
-        
+        b.mission = "Civic Action Project"
+
         b.grant_period = "Fall"
         b.start_year = 1996
         b.budget_last = 10000
