@@ -28,4 +28,3 @@ class Command(BaseCommand):
             for times in range(0, times):
                 grantcycle = generate_grantcycle()
                 grantcycle.save()
-
