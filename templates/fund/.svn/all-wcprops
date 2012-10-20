@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/107/trunk/templates/fund
+END
+not_approved.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/45/trunk/templates/fund/not_approved.html
+END
+email_gift.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/60/trunk/templates/fund/email_gift.html
+END
+delete.html
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/92/trunk/templates/fund/delete.html
+END
+email_account_approved.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/45/trunk/templates/fund/email_account_approved.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/99/trunk/templates/fund/login.html
+END
+password_reset_done.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/45/trunk/templates/fund/password_reset_done.html
+END
+base.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/48/trunk/templates/fund/base.html
+END
+password_reset_email.html
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/45/trunk/templates/fund/password_reset_email.html
+END
+test.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/60/trunk/templates/fund/test.html
+END
+email_overdue.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/50/trunk/templates/fund/email_overdue.html
+END
+password_reset_confirm.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/92/trunk/templates/fund/password_reset_confirm.html
+END
+reset.html
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/92/trunk/templates/fund/reset.html
+END
+add_step.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/91/trunk/templates/fund/add_step.html
+END
+register.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/50/trunk/templates/fund/register.html
+END
+add_mult_step.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/91/trunk/templates/fund/add_mult_step.html
+END
+edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/92/trunk/templates/fund/edit.html
+END
+home.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/91/trunk/templates/fund/home.html
+END
+projects.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/92/trunk/templates/fund/projects.html
+END
+password_reset_complete.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/45/trunk/templates/fund/password_reset_complete.html
+END
+registered.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/76/trunk/templates/fund/registered.html
+END
+stats.html
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/47/trunk/templates/fund/stats.html
+END
+scoring_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/107/trunk/templates/fund/scoring_list.html
+END
+email_new_accounts.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/45/trunk/templates/fund/email_new_accounts.html
+END
+blocked.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/92/trunk/templates/fund/blocked.html
+END
+add_contact.html
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/92/trunk/templates/fund/add_contact.html
+END
+suggested_steps.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/80/trunk/templates/fund/suggested_steps.html
+END
+support.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/58/trunk/templates/fund/support.html
+END
+news.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/80/trunk/templates/fund/news.html
+END
+blocks.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/107/trunk/templates/fund/blocks.html
+END
+done_step.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/92/trunk/templates/fund/done_step.html
+END
+not_member.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/45/trunk/templates/fund/not_member.html
+END
+admin_single.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/45/trunk/templates/fund/admin_single.html
+END
+add_mult.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/82/trunk/templates/fund/add_mult.html
+END

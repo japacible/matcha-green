@@ -1,0 +1,18 @@
+﻿{% extends 'fund/base.html' %}
+
+{% block content %}
+
+<u>{{proj}}</u><br>
+Participants: {{proj.parti}}<br>
+Contacts: {{proj.contacts}}<br>
+Talked to: {{proj.talked}}<br>
+Asked: {{proj.asked}}<br>
+Estimated fundraising: {{proj.estimated}}<br>
+Pledged: ${{proj.pledged}}<br>
+Gifted: ${{proj.gifted}}<br>
+<br>
+<u>MEMBERS</u><br>
+<br>
+
+
+{% endblock %}

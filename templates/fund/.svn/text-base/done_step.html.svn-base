@@ -1,0 +1,57 @@
+{%if not ajax%}
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+	<html>
+	<head>
+		<title>SJF Fundraising</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/base.css" media="Screen"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/mobile.css" media="handheld"/>
+		<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+	</head>
+	Completing a step for {{donor}}: {{donor.get_next_step}}<br><br>
+{% endif %}
+<form id = "done_step" method="post" action="{{action}}">
+	<br>
+	{% if not donor.pledged %}
+		Enter any that took place:<br>
+		<table class="form asked">
+		{% if not donor.asked %}
+			<tr>
+				<th>Asked:</th>
+				<td>{{form.asked}}</td>
+				<td></td>
+			</tr>
+		{%endif%}
+		{% if not donor.pledged %}
+			<tr id="_pledge">
+				<th>Pledged:</th>
+				<td>{{form.pledged_amount}}</td>
+				<td>{{form.pledged_amount.errors}}</td>
+			</tr>
+		{%endif%}
+		</table>
+	{%else%}
+		Step completed.<br>
+	{%endif%}
+	<br>
+	Plan a next step (optional):<br>
+	<table class="form">
+		<tr>
+			<th>Date:</th>
+			<td>{{form.next_step_date}}</td>
+			<td>{{form.next_step_date.errors}}</td>
+		</tr>
+		<tr>
+			<th>Description:</th>
+			<td>{{form.next_step}}</td>
+			<td>{{form.next_step.errors}}</td>
+		</tr>
+	</table>
+	{% if not ajax %}
+		<input type="submit" value="Save"/>
+</form>
+	{% else %}
+</form>
+<button onclick="Submit('{{action}}', '#done_step', '{{donor.pk}}-nextstep')">Save</button>
+	{% endif %}
+<button onclick="location.href='/fund/'">Cancel</button>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/108/trunk/templates
+END
+500.html
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/45/trunk/templates/500.html
+END
+debug.html
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/94/trunk/templates/debug.html
+END
+404.html
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/45/trunk/templates/404.html
+END
+home.html
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/45/trunk/templates/home.html
+END
+base.html
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/45/trunk/templates/base.html
+END

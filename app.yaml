@@ -1,0 +1,37 @@
+application: sjf-nw
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+- remote_api: on
+- appstats: on
+
+handlers:
+
+- url: /_ah/queue/deferred
+  script: djangoappengine.deferred.handler.application
+  login: admin
+
+- url: /mail
+  script: wsgi.application
+  login: admin
+
+- url: /grants
+  script: wsgi.application
+  login: admin
+
+- url: /static/admin
+  static_dir: django/contrib/admin/static/admin
+  expiration: '0'
+
+- url: /static
+  static_dir: static
+
+- url: /favicon\.ico
+  static_files: static/favicon.ico
+  upload: favicon\.ico
+
+- url: /.*
+  script: wsgi.application

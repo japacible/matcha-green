@@ -1,0 +1,14 @@
+{% extends 'fund/blocks.html' %}
+
+{% block progress %}
+<div id="progress_container">
+  <div id="progress_bar" style="width:{{membership.giving_project.bar_width}}%"></div>
+</div>
+<div id="progress_desc">The giving project has raised ${{membership.giving_project.pledged}} so far</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- content goes here -->
+
+{% endblock %}

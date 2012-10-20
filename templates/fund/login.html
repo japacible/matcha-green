@@ -1,0 +1,30 @@
+﻿{% extends 'fund/base.html' %}
+{% block content %}
+<div align="center">
+	<p>Welcome to SJF's fundraising app.  Please login below or <a href="/fund/register">register</a>.</p>
+	<div id="login_wrapper">
+		<ul class="errorlist"><li>{{printout|safe}}</li></ul>
+		<form method="post" action="/fund/login/">
+			<table>
+				<tr>
+					<td colspan="2">{{ form.email.errors }}</td>
+				</tr>
+				<tr>
+					<td>{{ form.email.label }}</td>
+					<td>{{ form.email }}</td>
+				</tr>
+				<tr>
+					<td colspan="2">{{ form.password.errors }}</td>
+				</tr>
+				<tr>
+					<td>{{ form.password.label }}</td>
+					<td>{{ form.password }}</td>
+				</tr>
+			</table>
+			<input type="submit" value="Login" />
+		</form>
+		<br><br>
+		<div class="helptext"><a href="/fund/reset">Can't access your account?</a></div>
+	</div>
+</div>
+{% endblock %}

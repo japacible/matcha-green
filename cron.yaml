@@ -1,0 +1,16 @@
+cron:
+- description: overdue steps reminder to members
+  url: /mail/overdue-step
+  schedule: every day 14:05
+
+- description: acct approval reminder for admins
+  url: /mail/new-accounts
+  schedule: every day 14:00
+
+- description: emails & sets notifications for new gifts
+  url: /mail/gifts
+  schedule: every day 14:10
+
+- description: warns people with saved drafts when their grant cycle is about to close
+  url: /mail/drafts
+  schedule: every day 14:15

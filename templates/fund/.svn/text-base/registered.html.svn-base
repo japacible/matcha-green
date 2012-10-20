@@ -1,0 +1,7 @@
+﻿{% extends 'fund/base.html' %}
+{% block content %}
+<p>Thank you for registering!  Your membership in {{proj}} needs to be approved by an administrator before you can use the app with that project.  You'll receive an email notification when it is approved and ready for use.</p>
+
+<p>If you do not receive an approval email or if you have any questions please visit our <a href="/fund/support">support page</a> for more information or to contact an administrator.</p>
+
+{% endblock %}

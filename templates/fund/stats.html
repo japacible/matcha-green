@@ -1,0 +1,23 @@
+{% extends 'fund/base.html' %}
+
+{% block content %}
+
+<b>OVERALL</b><br>
+<br>
+Projects: {{overall.proj}}<br>
+Participants: {{overall.parti}}<br>
+Contacts: {{overall.contacts}}<br>
+Talked to: {{overall.talked}}<br>
+Asked: {{overall.asked}}<br>
+Estimated fundraising: ${{overall.estimated}}<br>
+Pledged: ${{overall.pledged}}<br>
+Gifted: ${{overall.gifted}}<br>
+<br>
+<b>GIVING PROJECTS</b><br>
+<br>
+
+<br>
+This page is for organization- and project-wide statistics.<br>
+For administrative functions including tracking member progress, visit the admin area.
+
+{% endblock %}

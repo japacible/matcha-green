@@ -1,0 +1,37 @@
+{% if size > 0 %}
+<div id="stepmult" align="center">
+	Use this form to plan a first step for each contact.  You can skip some and come back to them later; you'll be able to add or change steps any time.<br>
+	<form method="post" id="step_mult">
+	<table class="form" style="width:460px;">
+		<tr align="center">
+			<td></td>
+			<td>Step</td>
+			<td>Date</td>
+		</tr>
+		{{ formset.management_form }}
+		{% for form, d in fd%}
+			<tr align="center">
+				<td>{{form.donor.errors}}</td>
+				<td>{{form.description.errors}}</td>
+				<td>{{form.date.errors}}</td>
+			</tr>
+			<tr align="center">
+				<td>{{form.donor}}{{d}}</td>
+				<td>{{form.description}}</td>
+				<td>{{form.date}}</td>
+			</tr>
+			{% if multi %}
+			<tr align="center">
+				<td colspan="3">
+					<div id="suggest_{{forloop.counter0}}" style="display:none;">
+						{% include 'fund/suggested_steps.html' with target=form.description.auto_id %}
+					</div>
+				</td>
+			</tr>
+			{% endif %}
+	{% endfor %}
+	</table>
+	</form>
+	<button onclick="Submit('/fund/stepmult', '#step_mult', 'stepmult', 'date')">Save</button><button onclick="location.href='/fund/'">Cancel</button>
+</div>
+{% endif %}

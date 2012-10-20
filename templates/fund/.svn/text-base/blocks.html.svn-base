@@ -1,0 +1,22 @@
+{% extends 'fund/base.html' %}
+{% block top %}
+<div id="block_container">
+	<div class="top_block{%if homeactive %} active_block{% endif %}" id="personal" style="margin-right:14px;" onclick="location.href='/fund';">
+		<div class="block_header">Personal</div>
+		{% for step in steps|slice:":3" %}
+			<div class="block-item">{{step.date|date:"n/d/y"}} {{step.donor.firstname}}<br>{{step.description}}</div>
+		{% endfor %}
+	</div>
+	<div class="top_block{% if newsactive %} active_block{% endif %}" id="news" style="margin-right:13px;" onclick="location.href='/fund/gp';">
+		<div class="block_header">Project News</div>
+		{% for new in news|slice:":3" %}
+			<div class="block-item">{{new.date|date:"n/d/y" }}: {{new.short}}</div>
+		{% endfor %}
+	</div>
+	<div class="top_block{% if 3active %} active_block{% endif %}" id="info" onclick="location.href='/fund/info';">
+		<div class="block_header">Project Information</div>
+		<div class="block-item">Fundraising deadline:<br>
+		{{membership.giving_project.fundraising_deadline}}</div>
+	</div>
+</div>
+{% endblock %}

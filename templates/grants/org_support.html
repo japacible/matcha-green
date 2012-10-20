@@ -1,0 +1,59 @@
+{% extends 'grants/base.html' %}
+{% block script %}
+	<script type="text/javascript">
+	function toggle(a) {
+		var e=document.getElementById(a);
+		if(!e)return true;
+		if(e.style.display=="block"){
+			e.style.display="none"
+		} else {
+			e.style.display="block"
+		}
+		return true;
+	}
+	</script>
+{% endblock %}
+
+{% block content %}
+
+<div align="center"><h2>Support</h2></div>
+
+<div id="FAQ">
+	<h3>Applying for a grant</h3>
+
+	<a onclick="toggle('faq-1')"><b>Eligibility</b></a>
+	<div class="indent hidden" id="faq-1">
+		Please review our eligibility criteria before applying for a grant.
+	</div>
+
+	<a onclick="toggle('faq-2')"><b>Application process</b></a>
+	<div class="indent hidden" id="faq-2">
+		1. Register for an account<br>
+		All this requires is an email, password, and your organization's name.  Choose an email that you expect to have access to in future years.<br>
+		2. Fill out the online form<br>
+		<ul><li>The bottom of your home page has a links of SJF grant cycles.  Click the link on an open cycle to begin filling out the form.</li>
+		<li>Upload your budget form, grant funding sources and diversity chart.</li>
+		<li>Progress on the application is automatically saved every 30 seconds.  You can close the window and find it later under "saved drafts" on your home page.</li>
+		</ul>
+	</div>
+
+	<h3>Accounts</h3>
+
+	<a onclick="toggle('faq-3')"><b>Lost password</b></a>
+	<div class="indent hidden" id="faq-3">
+		If you've forgotten your password, go here to reset it.  You'll need to enter the email that was used to register your organization and a link will be sent to that address.
+	</div>
+
+	<a onclick="toggle('faq-4')"><b>Forgotten email/login</b></a>
+	<div class="indent hidden" id="faq-4">
+		If you forgot or no longer have access to the email used to register your organization, please contact us to have the email on your account updated.
+	</div>
+
+</div> <!-- ends div id FAQ -->
+<h3>Contact us</h3>
+
+<p>Submit site errors, suggestions or questions using <a href="https://docs.google.com/spreadsheet/viewform?formkey=dHZ2cllsc044U2dDQkx1b2s4TExzWUE6MQ" target="_blank">this form</a> or by emailing [tech email address].</p>
+
+<p>For more information about Social Justice Fund in general, visit <a href="http://socialjusticefund.org" target="_blank">our website</a>.</p>
+
+{% endblock %}

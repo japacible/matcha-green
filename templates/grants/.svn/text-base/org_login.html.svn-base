@@ -1,0 +1,65 @@
+{% extends 'grants/base.html' %}
+{%block content %}
+<div id="login_wrapper">
+	<p>Welcome to SJF's grant portal.  Please login or register below in order to apply for a grant.</p>
+	<table style="width:600px;">
+		<tr>
+			<td style="padding-top:0px;padding-right:10px">
+				LOGIN<br>
+				{{printout}}
+				<form method="post" action="/org/login/">
+					<table id="login_table">
+					<tr>
+						<td colspan="2">{{ form.username.errors }}</td>
+					</tr>
+					<tr>
+              <td>{{ form.username.label }}</td>
+							<td>{{ form.username }}</td>
+					</tr>
+					<tr>
+						<td colspan="2">{{ form.password.errors }}</td>
+					</tr>
+					<tr>
+							<td>{{ form.password.label }}</td>
+							<td>{{ form.password }}</td>
+					</tr>
+					</table>
+					<input type="submit" value="Login" />
+				</form>
+				<br><br>
+				<div class="helptext"><a href="/org/reset">Can't access your account?</a></div>
+			</td>
+			<td style="padding-left:10px;padding-right:10px">
+			REGISTER<br>
+				{%if rprintout%}<ul class="errorlist">{{rprintout}}</ul>{%endif%}
+				<form method="post" action="/org/register/">
+					<table>
+						<tr>
+							<td colspan="2">{{ register.email.errors }}</td>
+						</tr>
+						<tr>
+							<td>{{ register.email.label }}</td>
+							<td>{{ register.email }}</td>
+						</tr>
+						<tr>
+							<td colspan="2">{{ register.password.errors }}</td>
+						</tr>
+						<tr>
+							<td>{{ register.password.label }}</td>
+							<td>{{ register.password }}</td>
+						</tr>
+						<tr>
+							<td colspan="2">{{ register.organization.errors }}</td>
+						</tr>
+						<tr>
+							<td>{{ register.organization.label }}</td>
+							<td>{{ register.organization }}</td>
+						</tr>
+					</table>
+				<input type="submit" value="Register" />
+				</form>
+			</td>
+		</tr>
+	</table>
+</div>
+{%endblock%}

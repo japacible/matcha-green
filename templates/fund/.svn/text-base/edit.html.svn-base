@@ -1,0 +1,28 @@
+<!--used by EditStep, EditDonor -->
+{%if not ajax%}
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+	<html>
+	<head>
+		<title>SJF Fundraising</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/base.css" media="Screen"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/mobile.css" media="handheld"/>
+		<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+	</head>
+{% endif %}
+<form method="post" action="{{action}}" id="{{formid}}">
+<table class="form">
+	<tr>
+		<th></th>
+		<td>* = required</td>
+	</tr>
+	{{ form.as_table }}
+	</table>
+{%if not ajax%}
+	<input type="submit" value="Save"/>
+</form>
+{% else %}
+</form>
+<button onclick="Submit('{{action}}', '#{{formid}}', '{{divid}}')">Save</button>
+{% endif %}
+<button onclick="location.href='/fund/'">Cancel</button>

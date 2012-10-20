@@ -1,0 +1,46 @@
+﻿{% extends 'grants/base.html' %}
+{% block content %}
+{% load tz %}
+<div align="center"><h3>{{grantee}}</h3></div>
+
+<h4>Saved drafts</h4>
+	<ul>{%if saved%}{%for save in saved%}
+		<li><a href="/apply/{{save.grant_cycle.pk}}">{{save.grant_cycle}}</a> - last modified {{save.modified|date:"m/d h:ia"}}</li>
+	{%endfor%}{%else%}<li>None found</li>{%endif%}</ul>
+
+<h4>Submitted applications</h4>
+	<ul>{%if submitted%}{%for sub in submitted%}
+		<li><a href="/grants/view/{{sub.pk}}">{{sub.grant_cycle}} - submitted {{sub.submission_time|date:"m/d/y"}}</a></li>
+	{%endfor%}{%else%}<li>None found</li>{%endif%}</ul>
+
+<div align="center"><h3>SJF grant cycles</h3></div>
+
+<h4>Currently accepting applications</h4>
+
+<ul>{% if open %}
+{% for ope in open %}
+<li>{{ope}} - <a href="/apply/{{ope.pk}}">open until {{ope.close|date:"m/d/y"}}</a></li>
+{% endfor %}
+{% else %}
+<li>No grants are being accepted at this time.</li>
+{% endif %}</ul>
+
+<h4>Upcoming grant cycles</h4>
+
+<ul>{%for up in upcoming%}
+	<li>{{up}} - open {{up.open|date:"m/d/y"}} to {{up.close|date:"m/d/y"}}</li>
+{% empty %}
+	<li>No upcoming grant cycles.</li>
+{% endfor %}</ul>
+
+<h4>Recent grant cycles</h4>
+
+<ul>{% if closed %}
+{%for cl in closed%}
+<li>{{cl}} - open {{cl.open|date:"m/d/y"}} to {{cl.close|date:"m/d/y"}}
+{% endfor %}
+{% else %}
+<li>No grant cycles closed in the last 6 months.</li>
+{% endif %}</ul>
+
+{% endblock %}

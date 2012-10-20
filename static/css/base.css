@@ -1,0 +1,442 @@
+/* --- GENERAL --- */
+
+body {
+  font-family: Verdana;
+  font-size:.75em;
+}
+
+button, input[type="submit"] {
+	font-family: Verdana;
+}
+
+h1, h2, h3, h4 {
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin: 0.75em 0;
+	color:#555;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1em 0 1em 0; /* Equivalent to 1.5em in the page's base font: 1.5 / 1.5 = 1em */
+	/*color:#555;*/
+}
+
+h3 {
+  font-size: 1.3em;
+  margin: 1.154em 0; /* Equivalent to 1.5em in the page's base font: 1.5 / 1.3 = 1.154 */
+	color:#555;
+}
+
+h4 {
+	margin: 1em 0;
+	font-size:1.2em;
+}
+
+a {
+	color: #8B0E04;
+	text-decoration: none;
+	cursor:pointer;
+}
+
+a:visited {
+	color: #8B0E04;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+text-decoration: underline;
+}
+
+a:active {
+}
+
+/* ---SHARED LOGIN--- */
+
+div#login_wrapper{
+	display:table;
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+
+#login_wrapper table{
+	margin-left:auto;
+	margin-right:auto;
+	vertical-align:top;
+}
+
+/* --- FUND --- */
+
+/* general */
+div#page_wrapper {
+	width:640px;
+}
+
+/* header & bar */
+div#header {
+	font-size:2em;
+	text-align:center;
+	line-height:1.5em;
+	margin-bottom:.25em;
+	font-weight:bold;
+}
+
+div#progress_container {
+	width:636px;
+	height:12px;
+	border-style:solid;
+	border-width:2px;
+}
+
+div#progress_bar {
+	width:450px;
+	height:12px;
+	background:solid;
+	background-color: #8B0E04;
+}
+
+div#progress_desc {
+	text-align:center;
+	margin-top:.5em;
+	margin-bottom:1em;
+}
+
+/* blocks */
+div#block_container {
+	width:640px;
+	height:200px;
+	color:white;
+}
+
+div.top_block {
+	width:200px;
+	height:180px;
+	background-color:#444;
+	border-radius:8px;
+	border-style:solid;
+	border-width:2px;
+	border-color:#333;
+	float:left;
+	padding:0px;
+	cursor:pointer;
+}
+
+div.top_block:hover {
+	opacity:0.9;
+}
+
+div.active_block {
+	background-color:#D18316;
+	border-color:#C07205;
+}
+
+div.block_header {
+	font-weight:bold;
+	text-align:center;
+}
+
+div.block-item {
+	margin:10px;
+}
+
+/* content area general */
+div#content_area {
+	border-style:solid;
+	border-width:2px;
+	border-radius:8px;
+	border-color:#C07205;
+	padding:15px;
+	overflow:auto;
+}
+
+/**
+#page_wrapper ::-webkit-scrollbar {
+    width: 10px;
+	margin-right:3px;
+}
+
+#page_wrapper ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+#page_wrapper ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+	background-color:#444;
+} */
+
+div.indent {
+	margin-top:8px;
+	margin-left:8px;
+	margin-right:8px;
+	margin-bottom:8px;
+	padding:7px;
+}
+
+/* footer  */
+table#footer {
+	width:640px;
+	font-size:0.75em;
+	margin-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+div#admin-link {
+	text-align:center;
+}
+
+div#login {
+	text-align:right;
+}
+
+/* home */
+form{
+	display:inline;
+}
+
+div#notifications {
+	text-align:center;
+	margin-bottom:10px;
+}
+
+div.donor {
+	border-radius:2px;
+}
+
+div.donor_delete {
+	text-align:center;
+}
+
+div.edit_done {
+	float:right;
+}
+
+a.edit_done {
+	margin-left:2px;
+	margin-right:2px;
+}
+
+img.donor_tag {
+	float:right;
+	vertical-align:middle;
+}
+
+div.overdue_step {
+	display:inline;
+	color:red;
+	font-weight:bold;
+}
+
+table.asked {
+	width:290px;
+}
+
+table.asked th{
+	width:60px;
+}
+
+div.donor_details table {
+	width:100%;
+	vertical-align:top;
+}
+
+div.donor_details td {
+	width:45%;
+}
+
+div.ui-datepicker {
+	background-color:#FFF;
+	border:1px solid;
+	border-color:#aaa;
+	display:none;
+}
+
+div.ui-datepicker-title {
+	text-align:center;
+}
+
+a.ui-datepicker-next {
+	float:right;
+}
+
+table.form {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+table.form th {
+	font-weight:normal;
+	text-align:right;
+	padding-right:5px;
+	vertical-align:bottom;
+}
+
+table.form button {
+	align:center;
+}
+
+input.half {
+	width:50%;
+}
+
+input.tq {
+	width:75%;
+}
+
+div#FAQ  a{
+	display:block;
+	margin-bottom:10px;
+	/* color:#333; */
+}
+
+.hidden {
+	display:none;
+}
+
+/* info */
+table.padded td{
+	padding:5px;
+}
+
+iframe.resources {
+	display:block;
+	width:100%;
+	height:200px;
+	border:none;
+}
+
+/* support */
+iframe.support {
+	display:block;
+	width:100%;
+	height:500px;
+	border:none;
+}
+
+/* error pages */
+div.error_message {
+	font-weight:bold;
+}
+
+/* --- GRANT --- */
+
+div#nav_menu  {
+	text-align:center;
+	margin-bottom:20px;
+}
+
+img#logo {
+	display:inline;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+div#org_wrapper {
+	width:725px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+table#org_footer {
+	width:100%;
+	font-size:1em;
+}
+
+/* application form */
+div.formwrapper {
+	width:725px;
+	display:table;
+	/*border:1px solid;*/
+	border-color:#CCC;
+}
+
+div#autosaved {
+	display:inline
+}
+
+div#last_saved {
+	font-style:italic;
+}
+/** add sep for grants w/margin-top:10px; */
+ul.errorlist, ul.errorlist li {
+	list-style-type: none;
+	font-style:italic;
+	color:red;
+	margin:0 0 0 0;
+	vertical-align:bottom;
+	padding:2px;
+}
+
+div.label {
+	display:inline;
+	font-weight:bold;
+}
+
+table#application_form {
+	width:100%;
+}
+
+table#application_form td{
+	border:1px;
+	border-color:black;
+	width:360px;
+}
+
+input#id_contact_person, input#id_previous_grants {
+	width:300px;
+}
+
+input#id_ein {
+	width:100px;
+}
+
+div.formwrapper input, div.formwrapper select {
+	margin-left:8px;
+}
+
+textarea {
+	width:98%;
+}
+
+div.info_box {
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+div.char_counter {
+	display:inline;
+}
+
+/* TO ORGANIZE */
+
+div.sugg_step {
+	padding:4px;
+	margin:4px;
+	background-color:#EEE;
+	border:1px solid;
+	border-color:#333;
+	cursor:pointer;
+	display:inline-block;
+}
+
+div.sugg_step:hover {
+	border-color:black;
+}
+
+div#stepmult {
+	margin-top:15px;
+}
+
+div#stepmult input {
+	margin-left:auto;
+	margin-right:auto;
+}

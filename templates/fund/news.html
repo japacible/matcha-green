@@ -1,0 +1,40 @@
+{% extends 'fund/blocks.html' %}
+
+{% block progress %}
+
+<div id="progress_container">
+<div id="progress_bar" style="width:{{membership.giving_project.bar_width}}%">
+</div></div>
+<div id="progress_desc">The giving project has raised ${{membership.giving_project.pledged}} so far</div>
+
+{% endblock %}
+
+{% block content %}
+
+<b>PROJECT PROGRESS</b>
+<div class="indent">
+	Fundraising goal: ${{membership.giving_project.fund_goal}}<br><br>
+	<table width="100%"><tr>
+		<td style="width:50%;">
+			{{membership.giving_project.contacts}} contacts<br>
+			{{membership.giving_project.talked}} talked to<br>
+			{{membership.giving_project.asked}} asked<br>
+		</td>
+		<td>
+			${{membership.giving_project.estimated}} estimated fundraising<br>
+			${{membership.giving_project.pledged}} pledged<br>
+			${{membership.giving_project.gifted}} gifted<br>
+		</td>
+	</tr></table>
+</div>
+
+<b>NEWS</b>
+<div class="indent">
+{% for new in news %}
+{{new.date|date:"n/d/y"}} - {% if new.title %}{{new.title}}{%else%}{{new.short}}{% endif %}
+{% if new.long %}<br>{{new.long|default:""}}{% endif %}
+{% if new.link %}<br><a href="{{new.link}}">Read more</a>{%endif%}
+<br><br>
+{% endfor %}
+</div>
+{% endblock %}

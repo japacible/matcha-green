@@ -1,0 +1,36 @@
+<div id="add_mult">
+	<form id="addmult">
+		<table class="form" style="text-align:center">
+		<tr>
+			<td>{{ formset.management_form }}</td>
+		</tr>
+		<tr>
+			<td>First name</td>
+			<td>Last name (optional)</td>
+			<td>Amount to ask</td>
+			<td>Likelihood</td>
+		</tr>
+		{%for form in formset%}
+			<tr>
+				<td>{{form.firstname.errors}}</td>
+				<td>{{form.lastname.errors}}</td>
+				<td>{{form.amount.errors}}</td>
+				<td>{{form.likelihood.errors}}</td>
+			</tr>
+			<tr>
+				<td>{{form.firstname}}</td>
+				<td>{{form.lastname}}</td>
+				<td>${{form.amount}}</td>
+				<td>{{form.likelihood}}%</td>
+			</tr>
+		{% endfor %}
+		</table>
+	</form>
+	<div align="right" style="margin-right:40px;">
+		<a onclick="cloneMore('.form tr:last', 'form')">Add row</a>
+	</div>
+	<div align="center">
+		<button onclick="SubmitMult()">Save</button>
+		<button onclick="location.href='/fund/'">Cancel</button>
+	</div>
+</div>

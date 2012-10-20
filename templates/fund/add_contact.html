@@ -1,0 +1,69 @@
+﻿<table>
+	<tr><td>
+		<form action="{{action}}" method="post" id="add_donor">
+		<table class="form">
+			<tr>
+				<th></th>
+				<td>*=required</td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>{{form.firstname.label}}</th>
+				<td>{{form.firstname}}</td>
+				<td>{{form.firstname.errors}}</td>
+			</tr>
+			<tr>
+				<th>{{form.lastname.label}}</th>
+				<td>{{form.lastname}}</td>
+				<td>{{form.lastname.errors}}</td>
+			</tr>
+			<tr>
+				<th>{{form.amount.label}}</th>
+				<td>{{form.amount}}</td>
+				<td>{{form.amount.errors}}</td>
+			</tr>
+			<tr>
+				<th>{{form.likelihood.label}}</th>
+				<td>{{form.likelihood}}</td>
+				<td>{{form.likelihood.errors}}</td>
+			</tr>
+			<tr>
+				<th>{{form.phone.label}}</th>
+				<td>{{form.phone}}</td>
+				<td>{{form.phone.errors}}</td>
+			</tr>
+			<tr>
+				<th>{{form.email.label}}</th>
+				<td>{{form.email}}</td>
+				<td>{{form.email.errors}}</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>Plan your first step:</td>
+			</tr>
+			<tr>
+				<th>{{form.step_date.label}}</th>
+				<td>{{form.step_date}}</td>
+				<td>{{form.step_date.errors}}</td>
+			</tr>
+			<tr>
+				<th>{{form.step_desc.label}}</th>
+				<td>{{form.step_desc}}</td>
+				<td>{{form.step_desc.errors}}</td>
+			</tr>
+		</table>
+		</form>
+		<div align="center">
+			<button onclick="Submit('{{action}}', '#add_donor', 'adddonor')">Save</button><button onclick="cancelHide('adddonor')">Cancel</button>
+		</div>
+	</td>
+	<td style="vertical-align:bottom;">
+		<div align="center" style="margin-bottom:15px;">
+			OR<br>
+			[<a onclick="loadView('/fund/addmult', 'adddonor')">add multiple contacts</a>]
+			<br><br><br><br><br><br>
+			{% include 'fund/suggested_steps.html' with target="id_step_desc" %}
+		</div>
+	</td></tr>
+</table>
+

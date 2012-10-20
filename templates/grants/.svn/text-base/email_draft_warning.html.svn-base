@@ -1,0 +1,2 @@
+<p>{{org}},</p>
+<p>You have a draft grant application saved for {{cycle}}.  That grant cycle closes on {{cycle.close|date:"F j"}} at {{cycle.close|date:"g:ia"}}</p>

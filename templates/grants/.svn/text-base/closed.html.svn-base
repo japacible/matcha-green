@@ -1,0 +1,13 @@
+{% extends "grants/base.html" %}
+
+{% block title %}Grant cycle closed{% endblock %}
+
+{% block content %}
+
+<p>{{cycle}} ({{cycle.open}} - {{cycle.close}}) is not currently accepting applications.</p>
+
+<p>If you arrived here from another website, you may have followed an outdated link.  Your <a href="/org">home page</a> has a list of this year's grant cycles.</p>
+
+<p>If you believe this is an error or have further questions, you may <a href="https://docs.google.com/spreadsheet/viewform?formkey=dHZ2cllsc044U2dDQkx1b2s4TExzWUE6MQ" target="_blank">contact us</a>.</p>
+
+{% endblock %}

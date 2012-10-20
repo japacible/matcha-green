@@ -1,0 +1,18 @@
+﻿{% extends 'fund/base.html' %}
+{% block content %}
+
+<p>Forgot your password?  Enter your email in the form below and we'll send you instructions for creating a new one.</p>
+
+<form method='post' action=''>{% csrf_token %}
+	<table>
+			{{ form }}
+			<tr>
+				<td></td>
+				<td><input type='submit' value="Reset password" /></td>
+			</tr>
+	</table>
+</form>
+
+<p>If you've forgotten or no longer have access to the email address you used to register, please <a href="/fund/contact">contact an administrator</a>.</p>
+
+{% endblock %}

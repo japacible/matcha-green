@@ -1,0 +1,15 @@
+﻿<p>Friendly reminder!</p>
+
+<p>You have {{steps.count}} overdue fundraising step{{steps.count|pluralize}} for the {{ship.giving_project}}.  Please <a href="{{login_url}}">log in</a> and update your progress or use the links below.</p>
+
+<table>{% for step in steps %}
+<tr>
+<td>{{step.donor.firstname}} {{step.donor.lastname}}</td>
+<td>{{step}}</td>
+<td>[<a href="{{base_url}}fund/{{step.donor.pk}}/{{step.donor.get_next_step.pk}}/">edit</a> | <a href="{{base_url}}fund/{{step.donor.pk}}/{{step.donor.get_next_step.pk}}/done">complete</a>]</td>
+</tr>
+{% endfor %}
+</table>
+<p>If you need any support or have fundraising questions please contact your giving project facilitators.</p>
+
+<p>-SJF Fundraising App</p>

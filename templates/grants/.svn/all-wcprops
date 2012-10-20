@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/108/trunk/templates/grants
+END
+org_app.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/100/trunk/templates/grants/org_app.html
+END
+password_reset_complete.html
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/45/trunk/templates/grants/password_reset_complete.html
+END
+email_draft_warning.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/99/trunk/templates/grants/email_draft_warning.html
+END
+org_home.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/86/trunk/templates/grants/org_home.html
+END
+submitted.html
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/97/trunk/templates/grants/submitted.html
+END
+not_grantee.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/98/trunk/templates/grants/not_grantee.html
+END
+email_submitted.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/97/trunk/templates/grants/email_submitted.html
+END
+password_reset_done.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/45/trunk/templates/grants/password_reset_done.html
+END
+closed.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/43/trunk/templates/grants/closed.html
+END
+org_app2.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/41/trunk/templates/grants/org_app2.html
+END
+base.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/100/trunk/templates/grants/base.html
+END
+view_app.html
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/108/trunk/templates/grants/view_app.html
+END
+password_reset_email.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/45/trunk/templates/grants/password_reset_email.html
+END
+org_login.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/104/trunk/templates/grants/org_login.html
+END
+already_applied.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/43/trunk/templates/grants/already_applied.html
+END
+password_reset_confirm.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/45/trunk/templates/grants/password_reset_confirm.html
+END
+reset.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/45/trunk/templates/grants/reset.html
+END
+org_support.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/98/trunk/templates/grants/org_support.html
+END
+addproj.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/13/trunk/templates/grants/addproj.html
+END

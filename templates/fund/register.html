@@ -1,0 +1,54 @@
+﻿{% extends 'fund/base.html' %}
+{% block content %}
+
+<div align="center">
+<p>Register below to use SJF's fundraising app.</p>
+<p>An administrator will need to approve your account before you can login.  You will receive an email notification when your account is ready for use.</p></div>
+
+<div id="login_wrapper">
+<ul class="errorlist"><li>{{printout|safe}}</li></ul>
+<form method="post" action="/fund/register/">
+<table>
+<tr>
+	<td colspan="2">{{ form.first_name.errors }}</td>
+</tr>
+<tr>
+    <td>{{ form.first_name.label }}</td>
+    <td>{{ form.first_name }}</td>
+</tr>
+<tr>
+	<td colspan="2">{{ form.last_name.errors }}</td>
+</tr>
+<tr>
+    <td>{{ form.last_name.label }}</td>
+    <td>{{ form.last_name }}</td>
+</tr>
+<tr>
+	<td colspan="2">{{ form.giving_project.errors }}</td>
+</tr>
+<tr>
+    <td>{{ form.giving_project.label }}</td>
+    <td>{{ form.giving_project }}</td>
+</tr>
+<tr>
+	<td colspan="2">{{ form.email.errors }}</td>
+</tr>
+<tr>
+    <td>{{ form.email.label }}</td>
+    <td>{{ form.email }}</td>
+</tr>
+<tr>
+	<td colspan="2">{{ form.password.errors }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+<div align="center">
+<input type="submit" value="Register"/>
+</form>
+<br><br>
+Already registered? <a href="/fund/login/">Log in.</a></div>
+</div>
+{% endblock %}

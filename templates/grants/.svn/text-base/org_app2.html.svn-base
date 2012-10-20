@@ -1,0 +1,26 @@
+{% extends 'grants/base.html' %}
+
+{%block content %}
+{% load filetransfers %}
+<div id="formwrapper">
+<form action="{{upload_url}}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% render_upload_data upload_data %}
+  <h3>File uploads</h3>
+    <h4>Budget, grant funding sources and diversity chart</h4>
+	Upload as one file or multiple files.<br><br>
+  {{form.file1}}{{form.file1.errors}}<br>
+  {{form.file2}}{{form.file2.errors}}<br>
+  {{form.file2}}{{form.file2.errors}}<br>
+  <h4>Fiscal sponsor letter (if applicable)</h4>
+  If you are using a fiscal sponsor, please provide a letter from the sponsor stating that it agrees to act as your fiscal sponsor and supports Social Justice Fund's mission.<br><br>
+  
+{{form.fiscal_letter}}{{form.fiscal_letter.errors}}
+
+<br><br><br>
+
+    <div align="center"><input type="submit" value="SUBMIT APPLICATION" /></div>
+	</form>
+</div>
+
+{% endblock %}

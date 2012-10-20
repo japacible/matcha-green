@@ -1,0 +1,31 @@
+﻿{% extends 'fund/base.html' %}
+
+{% block content %}
+<a href="/fund">« back to home</a><br>
+<br>
+<b>YOUR PROJECTS</b>
+<div class="indent">
+{% if ships %}
+	You're registered for the following giving projects:<br>
+	<br>
+	{% for ship in ships %}
+		{% if ship.approved %}
+			<a href="/fund/set-current/{{ship.pk}}/">{{ship.giving_project}}</a>
+		{% else %}
+			{{ship.giving_project}} (pending approval)
+		{% endif %}<br>
+	{% endfor %}	
+{% else %}
+	You are not registered for any giving projects.  You'll need to sign up for one to access most of the fundraising app's functionality.  Use the menu below.
+{% endif %}
+	<br>
+</div>
+<b>REGISTER FOR A PROJECT</b>
+<div class="indent">
+	<ul class="errorlist"><li>{{printout}}{{form.giving_project.errors}}</li></ul>
+	<form method="post" action="">
+		{{form.giving_project}}
+		<input type="submit" value="Register"/>
+	</form>
+</div>
+{% endblock %}

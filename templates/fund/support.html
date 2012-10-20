@@ -1,0 +1,84 @@
+﻿{% extends 'fund/base.html' %}
+{% block script %}
+<script type="text/javascript">
+function toggle(a) {
+  var e=document.getElementById(a);
+  if(!e)return true;
+  if(e.style.display=="block"){
+    e.style.display="none"
+  } else {
+    e.style.display="block"
+  }
+  return true;
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<a href="/fund">« back to home</a>
+
+<h2>Frequently Asked Questions</h2>
+<div id="FAQ">
+<a onclick="toggle('faq-1')"><b>What does the app do?</b></a>
+<div class="indent hidden" id="faq-1">
+The purpose of the app is to make the giving project fundraising process easier by helping members keep track of and organize their fundraising plans.  The app focuses on breaking fundraising down into steps.  You’ll see various measures of your progress as you go, including when your donors’ gifts are received by SJF.  You can also track your giving project’s progress, as well as access project handouts and resources.
+</div>
+
+<a onclick="toggle('faq-2')"><b>How do I sign up?</b></a>
+<div class="indent hidden" id="faq-2">
+Register <a href="/fund/register">here</a>, then wait for a project leader to approve your account.  You’ll get an email when this is complete and you can log in.
+</div>
+
+<a onclick="toggle('faq-3')"><b>How do I start using the app?</b></a>
+<div class="indent hidden" id="faq-3">
+Once you’ve registered and signed in, you’ll probably want to get started on the home page by entering people that you’re planning to talk to about the project.  When you enter a contact, you’ll also be asked to enter a first step.  This is optional, but recommended - it’s good to plan ahead.
+<br><br>
+As you move forward in your fundraising, use the links to edit, complete or add steps.
+</div>
+
+<a onclick="toggle('faq-4')"><b>I forgot my login/password, what should I do?</b></a>
+<div class="indent hidden" id="faq-4">
+If you know your login (the email you used to sign up), you can reset your password <a href="/fund/reset">here</a>.<br>
+If you don't remember the email you used, or no longer have access to it, you'll need to contact an admin via <a href="https://docs.google.com/spreadsheet/viewform?formkey=dHZ2cllsc044U2dDQkx1b2s4TExzWUE6MQ">online form</a> or <a href="mailto:webmaster@socialjusticefund.org">email</a>.
+</div>
+
+<a onclick="toggle('faq-5')"><b>How does the giving project news work?</b></a>
+<div class="indent hidden" id="faq-5">
+The news section shares successes of giving project members.  Whenever you complete a step, it is shared with other people in your project via the news feed.
+<br><br>
+What is shared: the date, your first name, a general description of what happened ("talked to", "asked" or "got a pledge") and the amount pledged if applicable.
+<br><br>
+Not shared: the contact's name or anything about them, your step description.
+<br><br>
+If you have any questions or concerns about this information being shared, please contact us!  You can do so anonymously if you’d like - see below.
+</div>
+
+<a onclick="toggle('faq-6')"><b>Can I access the app on my mobile phone?</b></a>
+<div class="indent hidden" id="faq-6">
+Yes, the app can be accessed on mobile devices through a web browser.  We’ve attempted to keep the design and layout relatively small-screen-friendly.  We welcome any feedback on mobile usability.
+</div>
+
+<a onclick="toggle('faq-7')"><b>Does the app work for people in more than one giving project?</b></a>
+<div class="indent hidden" id="faq-7">
+Yes, it supports members being in multiple gps.<br><br>
+
+When you register, pick one of the giving projects you’re currently in - it doesn’t matter which.  Once you’re signed up, there will be a “your projects” link at the bottom of the page.  Go there to register for another GP.  Each membership requires an approval from one of the project leaders.
+<br><br>
+The app will only show you one GP at a time and your contacts are unique to each project.  To change which GP you’re currently working in, use the same projects link at the bottom of the page.  Clicking any link in your list of projects will set that as your “current” GP.
+</div>
+
+<a onclick="toggle('faq-8')"><b>I used the app last year - do I need to sign up again this year?</b></a>
+<div class="indent hidden" id="faq-8">
+Nope!  Just login and follow the “your projects” link at the bottom of the page.  Pick out your current project from the dropdown and hit register.  Once a leader has approved your membership, you’ll get an email and you’re good to go.
+</div>
+</div>
+<h2>Contact Us</h2>
+
+If you have a question that is not answered above, feel free to contact us.<br><br>
+
+Any feedback, suggestions, comments, etc. are also welcome.
+<br><br>
+Use our <a href="https://docs.google.com/spreadsheet/viewform?formkey=dHZ2cllsc044U2dDQkx1b2s4TExzWUE6MQ">online form</a> or send us an email at <a href="mailto:webmaster@socialjusticefund.org">webmaster@socialjusticefund.org</a>.
+<br><br>
+{% endblock %}

@@ -1,0 +1,18 @@
+<table style="width:100%">
+	<tr>
+		<td>
+			<form id="{{formid}}">
+				<table class="form">
+					{{ form.as_table }}
+				</table>
+			</form>
+			<div align="center">
+				<button onclick="Submit('{{action}}', '#{{formid}}', '{{divid}}', false)">Save</button>
+				<button onclick="location.href='/fund/'">Cancel</button>
+			</div>
+		</td>
+		<td>
+			{% include 'fund/suggested_steps.html'  with target="id_description" %}
+		</td>
+	</tr>
+</table>

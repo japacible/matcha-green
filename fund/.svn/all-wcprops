@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/107/trunk/fund
+END
+decorators.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/104/trunk/fund/decorators.py
+END
+forms.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/104/trunk/fund/forms.py
+END
+admin.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/104/trunk/fund/admin.py
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/107/trunk/fund/views.py
+END
+middleware.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/104/trunk/fund/middleware.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/5/trunk/fund/__init__.py
+END
+tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/104/trunk/fund/tests.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/104/trunk/fund/models.py
+END

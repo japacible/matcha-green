@@ -1,0 +1,189 @@
+{% extends 'grants/base.html' %}
+
+{% block script %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+function confirmation() {
+	var conf = confirm("Delete this draft?  It cannot be recovered.")
+	if (conf){
+		window.location = "/apply/"+{{cycleid}}+"/DELETE"
+	}
+}
+
+function autoSave(){
+	$.ajax({
+		url:"/apply/"+{{cycleid}}+"/autosave/",
+		type:"POST",
+		data:$('form').serialize(),
+		success:function(){
+			var monthNames = [ "January", "February", "March", "April", "May", "June",
+			"July", "August", "September", "October", "November", "December" ];
+			var d = new Date();
+			var h = d.getHours();
+			var m = d.getMinutes();
+			/*var s = d.getSeconds();*/
+			var dd = "a.m.";
+			if (h >= 12) {
+				h = h-12;
+				dd = "p.m.";
+			}
+			if (h == 0) {
+				h = 12;
+			}
+			m = m<10?"0"+m:m;
+			/* s = s<10?"0"+s:s; */
+			var da = monthNames[d.getMonth()]+' '+d.getDate()+', '+h+':'+m+dd;
+			document.getElementById('autosaved').innerHTML=da;
+		},
+		error:function(jqXHR, textStatus, errorThrown){
+			document.getElementById('autosaved').innerHTML=textStatus+' '+errorThrown;
+		},
+	});
+	window.setTimeout("autoSave()", 30000);
+}
+
+function charLimitDisplay(area, limit){
+	var counter = document.getElementById(area.name + '_counter');
+	counter.innerHTML = limit - area.value.length;
+}
+
+$(document).ready(function() {
+	window.setTimeout("autoSave()", 30000);
+});
+</script>
+{%endblock%}
+
+{% block content %}
+{% load tz %}
+<div class="formwrapper">
+<form action="{{upload_url}}" method="POST" enctype="multipart/form-data">
+
+  <div id="test" style="display:none;">
+	TEST ONLY: {{form.errors}}{{form.organization}}{{form.grant_cycle}}
+	</div>
+	
+  <div align="center"><h1>{{cycle}} Application</h1>
+  <div id="last_saved">Last saved: <div id="autosaved">{%if saved %}{{saved|date:"F j, g:ia"}}{%else%}never{% endif %}</div></div>
+	</div>
+
+  <table id="application_form">
+  <tr><td><h4>Contact information</h4></td><tr>
+	
+  <tr><td>{{form.address.errors}}</td><td>{{form.city.errors}}</td></tr>
+  <tr><td>{{form.address.label}}{{form.address}}</td>
+  <td>{{form.city.label}}{{form.city}} </td></tr>
+  
+  <tr><td>{{form.state.errors}}</td><td>{{form.zip.errors}}</td></tr>
+  <tr><td>{{form.state.label}}{{form.state}}</td>
+  <td>{{form.zip.label}}{{form.zip}}</td></tr>
+  
+  <tr><td>{{form.telephone_number.errors}}</td><td>{{form.fax_number.errors}}</td></tr>
+  <tr><td>{{form.telephone_number.label}}{{form.telephone_number}}</td>
+  <td>{{form.fax_number.label}}{{form.fax_number}}
+  </td></tr>
+  
+  <tr><td>{{form.email_address.errors}}</td><td>{{form.website.errors}}</td></tr>
+  <tr><td>{{form.email_address.label}}{{form.email_address}}</td>
+  <td>{{form.website.label}}{{form.website}}
+  </td></tr>
+  
+  <tr><td><h4>Organization information</h4></td><tr>
+  
+  <tr><td colspan="2">{{form.status.errors}}{{form.status.label}}{{form.status}}</td><tr> 
+
+  <tr><td>{{form.ein.errors}}</td><td>{{form.founded.errors}}</td></tr>
+  <tr><td>{{form.ein.label}}{{form.ein}}</td><td>{{form.founded.label}}{{form.founded}}</td></tr>
+  
+	<tr><td colspan="2">{{form.mission.label}}{{form.mission.errors}}{{form.mission}}<div class="char_counter" id="mission_counter">300</div> characters remaining</td></tr>
+		
+  <tr><td><h4>Grant and budget information</h4></td><tr>
+  
+	<tr><td colspan="2">{{form.contact_person.errors}}</td></tr>
+  <tr><td colspan="2">{{form.contact_person.label}} {{form.contact_person}}</td></tr>
+	
+  <tr><td>{{form.grant_period.errors}}</td><td>{{form.start_year.errors}}</td></tr>
+  
+  <tr><td>{{form.grant_period.label}}{{form.grant_period}}</td>
+  <td>{{form.start_year.label}}{{form.start_year}}</td></tr>
+ 
+ <tr><td></td><td></td></tr>
+ 
+	<tr><td>{{form.budget_last.errors}}</td><td>{{form.budget_current.errors}}</td></tr>
+	<tr><td>{{form.budget_last.label}} ${{form.budget_last}} </td>
+	<td>{{form.budget_current.label}} ${{form.budget_current}}</td></tr>
+ 
+ <tr><td colspan="2">{{form.previous_grants.errors}}</td></tr>
+ <tr><td colspan="2">{{form.previous_grants.label}} {{form.previous_grants}} </td></tr>
+ 
+  <tr><td colspan="2">{{form.grant_request.label}}{{form.grant_request.errors}}{{form.grant_request}}</td></tr>
+  <tr><td>{{form.amount_requested.errors}}</td><td>{{form.support_type.errors}}</td></tr>
+   <tr><td>{{form.amount_requested.label}}{{form.amount_requested}}</td>
+   <td> {{form.support_type.label}}{{form.support_type}}</td></tr>
+   
+    <tr><td>{{form.project_title.errors}}</td><td>{{form.project_budget.errors}}</td></tr>
+  <tr><td>{{form.project_title.label}}{{form.project_title}}</td>
+  <td> {{form.project_budget.label}} ${{form.project_budget}}</td></tr>
+  
+  <tr><td><h4>Fiscal sponsor information (if applicable)</h4></td><tr>
+  
+   <tr><td>{{form.fiscal_org.errors}}</td><td>{{form.fiscal_person.errors}}</td></tr>
+    <tr><td>{{form.fiscal_org.label}}{{form.fiscal_org}}</td>
+	<td>{{form.fiscal_person.label}}{{form.fiscal_person}}</td></tr>
+  
+   <tr><td>{{form.fiscal_telephone.errors}}</td><td>{{form.fiscal_email.errors}}</td></tr>
+  <tr><td>{{form.fiscal_telephone.label}}{{form.fiscal_telephone}}</td>
+  <td>{{form.fiscal_email.label}}{{form.fiscal_email}}</td></tr>
+  
+   <tr><td colspan="2">{{form.fiscal_address.errors}}</td></tr>
+  <tr><td colspan="2">{{form.fiscal_address.label}}{{form.fiscal_address}}</td></tr>
+
+  </table>
+
+<h4>Narrative</h4>
+
+	{%if texts.narrative_heading %}
+		{{texts.narrative_heading}}
+  {%else%}
+		Be as specific as possible when responding to each item. Your responses will reflect on the soundness of your organizational structure, your social change strategy and your organizing plan.  	Please keep in mind that the strength of your written application will significantly influence the overall score you receive in the decision-making process.
+	{%endif%}
+  
+   <p><b>1.</b> {%if texts.narrative1 %}{{texts.narrative1|safe}}{%else%}
+		{{form.narrative1.label|safe}}{%endif%}
+		{{form.narrative1.errors}}{{form.narrative1}}</p>
+   
+   <p><b>2.</b> {%if texts.narrative2 %}{{texts.narrative2|safe}}{%else%}
+   {{form.narrative2.label|safe}}{%endif%}
+   {{form.narrative2.errors}}{{form.narrative2}}</p>
+   
+   <p><b>3.</b>
+		{%if texts.narrative3 %}{{texts.narrative3|safe}}
+		{%else%}{{form.narrative3.label|safe}}{%endif%}
+   {{form.narrative3.errors}}{{form.narrative3}}</p>
+   
+   <p><b>4.</b> {%if texts.narrative4 %}{{texts.narrative4|safe}}{%else%}
+   {{form.narrative4.label|safe}}{%endif%}
+   {{form.narrative4.errors}}{{form.narrative4}}</p>
+   
+   <p><b>5.</b> {%if texts.narrative5 %}{{texts.narrative5|safe}}{%else%}
+   {{form.narrative5.label|safe}}{%endif%}
+   {{form.narrative5.errors}}
+   {{form.narrative5}}</p>
+   
+   <p>{%if texts.narrative6 %}{{texts.narrative6|safe}}{{form.narrative6.errors}}<br>{{form.narrative6}}</p>{%endif%}
+  
+    <h4>Budget, grant funding sources and diversity chart</h4>
+	Upload as one file or multiple files.<br><br>
+  {{form.file1.errors}}{{form.file1}}<br>
+  <!--{{form.file2.errors}}{{form.file2}}<br>
+  {{form.file2.errors}}{{form.file2}}<br>
+  <h4>Fiscal sponsor letter (if applicable)</h4>
+  If you are using a fiscal sponsor, please provide a letter from the sponsor stating that it agrees to act as your fiscal sponsor and supports Social Justice Fund's mission.<br><br>
+  
+{{form.fiscal_letter}}{{form.fiscal_letter.errors}}
+  <br><br>-->
+  
+  <div align="center"><input type="submit" value="Submit Application" /></div>
+</form><div align="right"><button type="button" onclick="confirmation()">Discard</button>
+</div>
+{% endblock %}

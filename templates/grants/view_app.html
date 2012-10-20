@@ -1,0 +1,69 @@
+{%extends 'grants/base.html'%}
+{%block content%}
+<div id="fontfree">
+<div align="center">
+<h2>{{app.organization}}</h2>
+Submitted {{app.submission_time}}</div>
+<br>
+<div class="label">{{form.address.label}}:</div> {{app.address}} {{app.city}}, {{app.state}} {{app.zip}}<br>
+<div class="label">{{form.telephone_number.label}}:</div> {{app.telephone_number}},  <div class="label">{{form.fax_number.label}}:</div> {{app.fax_number}}<br>
+ <div class="label">{{form.email_address.label}}:</div> {{app.email_address}}<br>
+ <div class="label">{{form.website.label}}:</div> {{app.website}}<br>
+<div class="label">{{form.contact_person.label}}:</div> {{app.contact_person}}<br>
+<br>
+<div class="label">{{form.status.label}}:</div> {{app.status}}<br>
+<div class="label">{{form.ein.label}}:</div> {{app.ein}}<br>
+<div class="label">{{form.founded.label}}:</div> {{app.founded}}<br>
+<br>
+<div class="label">{{form.amount_requested.label}}:</div> {{app.amount_requested}}<br>
+<div class="label">{{form.support_type.label}}:</div> {{app.support_type}}<br>
+<div class="label">{{form.grant_period.label}}:</div> {{app.grant_period}}<br>
+<div class="label">{{form.start_year.label}}:</div> {{app.start_year}}<br>
+<div class="label">{{form.budget_last.label}}:</div> ${{app.budget_last}}<br>
+<div class="label">{{form.budget_current.label}}:</div> ${{app.budget_current}}<br>
+<br>
+<div class="label">{{form.project_title.label}}:</div> {{app.project_title|default:"N/A"}} <br>
+{%if app.project_budget%}<div class="label">{{form.project_budget.label}}:</div> ${{app.project_budget}}{%endif%}
+<br>
+<div class="label">{{form.mission.label}}:</div> {{app.mission}}<br>
+<div class="label">{{form.grant_request.label}}:</div> {{app.grant_request}}<br>
+<br>
+<div class="label">{{form.fiscal_org.label}}:</div> {{app.fiscal_org|default:"N/A"}}<br>
+{%if app.fiscal_org%}
+<div class="label">{{form.fiscal_person.label}}:</div> {{app.fiscal_person}}<br>
+<div class="label">{{form.fiscal_telephone.label}}:</div> {{app.fiscal_telephone}}<br>
+<div class="label">{{form.fiscal_email.label}}:</div> {{app.fiscal_email}}<br>
+<div class="label">{{form.fiscal_address.label}}:</div> {{app.fiscal_address}}<br>
+{%endif%}
+<h3>Narrative</h3>
+<div class="label">{{form.narrative1.label|safe}}</div><br>
+{{app.narrative1}}<br><br>
+<div class="label">{{form.narrative2.label|safe}}</div><br>
+{{app.narrative2}}<br><br>
+<div class="label">{{form.narrative3.label|safe}}</div><br>
+{{app.narrative3}}<br><br>
+<div class="label">{{form.narrative4.label|safe}}</div><br>
+{{app.narrative4}}<br><br>
+<div class="label">{{form.narrative5.label|safe}}</div><br>
+{{app.narrative5}}<br><br>
+
+<!--
+<h3>Files</h3>
+<h4>Budget, grant funding sources and diversity chart</h4>
+{%if app.file1_name %}
+<a href="https://docs.google.com/viewer?url=http://sjf-nw.appspot.com/grants/download/{{app.file1_name}}">View</a><br>
+{%endif%}
+{%if app.file2_name%}
+<a href="https://docs.google.com/viewer?url=http://sjf-nw.appspot.com/grants/download/{{app.file2_name}}">View</a><br>
+{%endif%}
+{%if app.file3_name%}
+<a href="https://docs.google.com/viewer?url=http://sjf-nw.appspot.com/grants/download/{{app.file3_name}}">View</a><br>
+{%endif%}
+
+<h4>Letter from fiscal sponsor (if applicable)</h4>
+{% if app.fiscal_letter_name %}
+<a href="https://docs.google.com/viewer?url=http://sjf-nw.appspot.com/grants/download/{{app.fiscal_letter_name}}">View</a><br>
+{%else%}N/A{% endif %}
+-->
+</div>
+{%endblock%}
