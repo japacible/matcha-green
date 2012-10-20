@@ -114,7 +114,12 @@ def export(qs, fields=None):
 # MISC
 def search_grant_applications(options):
     logging.info(options)
-    results = GrantApplication.objects.filter(organization__name__contains=options['grantee'])
+    # TODO: DON'T LET THIS PULL DOWN THE WHOLE DB
+    results = GrantApplication.objects.filter()
+    if 'grantee' in options:
+        results = results.filter(organization__name__contains=options['grantee'])
+
+    # TODO: The other params should actually affect the search results!!
     # results = results.filter(organization__city__contains=options['city'])
     # results = results.filter(organization__state__contains=options['state'])
     # Similar thing for giving project type(WHAT KEY IS THIS!?!?)

@@ -68,6 +68,9 @@ urlpatterns = patterns('',
         'grants.search.api_show_grant_cycle'),
 
     # Endpoint for csv
+    (r'^grants/csv/grant_application/results',
+        'grants.search.csv_grant_applications'),
+
     (r'^grants/csv/grant_application/(?P<grant_application_id>\d+)/$',
         'grants.search.csv_show_grant_application'),
 
