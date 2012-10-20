@@ -17,7 +17,7 @@ def generate_grantee():
     a = Grantee()
     a.name  = "Bill and Melinda Gates Foundation"
     a.email = "BMGF@gmail.com"
-    a.city = "Medina"
+    a.city = "Cheyenne"
     a.state = "WY"
     a.zip = 10562
     a.telephone_number = "(800)-1828-1299"
@@ -43,7 +43,7 @@ class Command(BaseCommand):
         b.organization = generate_grantee()
         b.submission_time = datetime.datetime(2003, 8, 4, 12, 30, 45)
         b.address = "8888 88th PL"
-        b.city = 'Medina'
+        b.city = 'Cheyenne'
         b.state = 'WY'
         b.zip = 38490
         b.telephone_number = "(222)377-2173"
