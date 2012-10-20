@@ -10,7 +10,7 @@ from models import *
 
 NO_EXIST_OBJECT = {
   "error": "Resource not found",
-  "message": "Couldn't find Site with ID=9999999999999999999999999"
+  "message": "Couldn't find Object"
 }
 
 def search(request):
@@ -29,3 +29,10 @@ def api_show(request, grant_application_id):
     except GrantApplication.DoesNotExist:
         return HttpResponse(json.dumps(NO_EXIST_OBJECT))
     return HttpResponse(serializers.serialize('json', [grant_application]))
+
+def api_show_grantee(request, grantee_id):
+    try:
+        grantee = Grantee.objects.get(id=grantee_id)
+    except Grantee.DoesNotExist:
+        return HttpResponse(json.dumps(NO_EXIST_OBJECT))
+    return HttpResponse(serializers.serialize('json', [grantee]))
