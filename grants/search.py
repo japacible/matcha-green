@@ -125,4 +125,12 @@ def search_grant_applications(options):
     # Similar thing for giving project type(WHAT KEY IS THIS!?!?)
     # results = results.filter(grant_cycle__title__contains='')
     # results = results.filter(submission_time__year=options['year'])
-    return results
+
+    results2 = []
+    for r in results[:]:
+        pts = r.grant_cycle.givingproject_set.all()
+        for pt in pts[:]:
+            if pt.title == options['project_type']:
+                results2.append(r)
+
+    return results2
