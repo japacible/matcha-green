@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 
 SECRET_KEY = '*r-$b*8hglm+959&7x043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
@@ -21,6 +22,7 @@ else:
       'NAME': 'sjfdb',
     }
   }
+  DATABASES['default'] = dj_database_url.config()
   DEBUG = True
 
 INSTALLED_APPS = (
