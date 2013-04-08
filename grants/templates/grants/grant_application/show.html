@@ -15,9 +15,13 @@
             </div>
             <h2>Giving Project // 
                 <span>
-                    {% for gp in grant_application.grant_cycle.givingproject_set.all %}
-                            {{ gp.title }}{% if not forloop.last %},{% endif %}
-                    {% endfor %}
+                    {% if grant_application.grant_cycle.givingproject_set.all %}
+                        {% for gp in grant_application.grant_cycle.givingproject_set.all %}
+                                {{ gp.title }}{% if not forloop.last %},{% endif %}
+                        {% endfor %}
+                    {% else %}
+                        No Giving Project
+                    {% endif %}
                 </span>
             </h2>
             <h2>Grant Status // <span>{{ grant_application.get_screening_status_display }}</span></h2>

@@ -8,7 +8,9 @@ from django.http import HttpResponse
 from django.utils import simplejson
 import json
 import csv
+import datetime
 import logging
+import string
 from models import *
 from django.template.defaultfilters import slugify
 from django.db.models.loading import get_model
@@ -24,7 +26,9 @@ def search(request):
 def results(request):
     grant_applications = search_grant_applications(request.REQUEST)
     template = loader.get_template('grants/grant_application/results.html')
-    context  = Context({'grant_applications': grant_applications, })
+    url = request.get_full_path()
+    url = string.replace(url, "grants/", "grants/csv/")
+    context  = Context({'grant_applications': grant_applications, 'csv' : url})
     return HttpResponse(template.render(context))
 
 
@@ -113,34 +117,42 @@ def export(qs, fields=None):
 
 # MISC
 def search_grant_applications(options):
+    # Error checking!
+    if options.get('year_start') > options.get('year_end'):
+        logging.warning("Start date is ahead of end date")
+        return []
+
     logging.info("\033[31m")
     # TODO: DON'T LET THIS PULL DOWN THE WHOLE DB
-    results = GrantApplication.objects.filter()
-    logging.info(results)
+    results = GrantApplication.objects.distinct().select_related('organization', 'grant_cycle__givingproject_set')
     if 'grantee' in options:
         results = results.filter(organization__name__contains=options['grantee'])
-    logging.info(results)
-    logging.info(options)
     # TODO: The other params should actually affect the search results!!
     if options.get('city'):
-        results = results.filter(organization__city__contains=options['city'])
+        results = results.filter(city=options['city'])
     if options.get('state'):
-        results = results.filter(organization__state__contains=options['state'])
+        results = results.filter(state__in=options.getlist('state'))#options.getlist('state'))
     if options.get('grant_status'):
-        results = results.filter(screening_status=options['grant_status'])
-    if options.get('year'):
-        results = results.filter(submission_time__year=options['year'])
+        results = results.filter(screening_status__in=options.getlist('grant_status'))
+    if options.get('year_start'):
+        ys = datetime.date(int(options['year_start']), 1, 1)
+        results = results.filter(submission_time__gte=ys)
+    if options.get('year_end'):
+        ye = datetime.date(int(options['year_end']), 12, 31)
+        results = results.filter(submission_time__lte=ye)
     logging.info("\033[0m")
 
     # Need to pick out all the project types that match query
     # and sticks in another array
     # Ugly way of doing it cause Database is set up inconveniently D:
-    if options.get('project_type'):
+    # ADD THE PROJECT TYPE TO THE GRANT_APPLICATION MODELLLL!!!! D:<
+    if options.get('giving_project'):
         results2 = []
         for r in results[:]:
             pts = r.grant_cycle.givingproject_set.all()
             for pt in pts[:]:
-                if pt.title == options['project_type']:
+                if pt.title in options.getlist('giving_project'):
                     results2.append(r)
+                    break
         return results2
     return results

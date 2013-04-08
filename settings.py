@@ -1,27 +1,29 @@
 import os
+import dj_database_url
 
 SECRET_KEY = '*r-$b*8hglm+959&7x043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
-if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or os.getenv('SETTINGS_MODE') == 'prod'):
-  DATABASES = {
-    'default': {
-      'ENGINE': 'google.appengine.ext.django.backends.rdbms',
-      'INSTANCE': 'sjf-northwest:sjf',
-      'NAME': 'sjf_devel',
-    }
-  }
-  DEBUG = False
-else:
-  DATABASES = {
-    'default': {
-      'ENGINE': 'django.db.backends.mysql',
-      'USER': 'root',
-      'PASSWORD': 'SJFdb',
-      'HOST': 'localhost',
-      'NAME': 'sjfdb',
-    }
-  }
-  DEBUG = True
+# if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or os.getenv('SETTINGS_MODE') == 'prod'):
+#   DATABASES = {
+#     'default': {
+#       'ENGINE': 'google.appengine.ext.django.backends.rdbms',
+#       'INSTANCE': 'sjf-northwest:sjf',
+#       'NAME': 'sjf_devel',
+#     }
+#   }
+#   DEBUG = False
+# else:
+DATABASES = {
+'default': {
+  'ENGINE': 'django.db.backends.mysql',
+  'USER': 'root',
+  'PASSWORD': 'SJFdb',
+  'HOST': 'localhost',
+  'NAME': 'sjfdb',
+}
+}
+DATABASES['default'] = dj_database_url.config()
+DEBUG = True
 
 INSTALLED_APPS = (
   'django.contrib.admin',
@@ -31,11 +33,11 @@ INSTALLED_APPS = (
   'django.contrib.messages',
   'grants',
   'fund',
-  'djangoappengine', # last so it can override a few manage.py commands
+  # 'djangoappengine', # last so it can override a few manage.py commands
 )
 
 MIDDLEWARE_CLASSES = (
-  'google.appengine.ext.appstats.recording.AppStatsDjangoMiddleware', #must be first
+  # 'google.appengine.ext.appstats.recording.AppStatsDjangoMiddleware', #must be first
   'django.middleware.common.CommonMiddleware',
   'django.contrib.sessions.middleware.SessionMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',

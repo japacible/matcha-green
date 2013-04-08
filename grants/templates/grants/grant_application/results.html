@@ -14,6 +14,7 @@
             <div class="page-header">
                     <h1>results // <small>here are your grants.</small></h1>
             </div>
+            <h3 class="pull-right"><a href="{{ csv }}">Click here to download results</a></h3>
                 <table class="table table-hover">
                     <thead>
                             <tr>
@@ -40,12 +41,7 @@
                     </tbody>
                 </table>
             <script>
-                var arrayOfObjects = [{"pk": 1, "model": "grants.grantapplication", "fields": {"file1_type": null, "status": "", "file1": "", "file2": "", "file2_name": null, "address": "", "fiscal_letter": "", "mission": "", "founded": null, "fiscal_telephone": null, "email_address": "", "city": "Seattle", "file3_type": null, "amount_requested": null, "zip": "", "grant_cycle": null, "support_type": "", "state": "Washington", "project_budget": "5000", "fiscal_letter_type": null, "scoring_bonus_poc": false, "fiscal_letter_name": null, "file3": "", "website": null, "narrative1": "", "start_year": "", "narrative3": "", "narrative4": "", "narrative5": "", "narrative6": null, "screening_status": 10, "fax_number": null, "budget_last": null, "file2_type": null, "file1_name": null, "submission_time": "12-20-2000", "fiscal_email": null, "narrative2": "", "grant_period": "", "previous_grants": "", "grant_request": "1-1-2002", "fiscal_person": null, "fiscal_org": null, "project_title": null, "budget_current": null, "scoring_bonus_geo": false, "fiscal_address": null, "telephone_number": "", "organization": "Jolie's Corgis", "contact_person": "", "file3_name": null, "ein": ""}},
-
-                    {"pk": 2, "model": "grants.grantapplication", "fields": {"file1_type": null, "status": "", "file1": "", "file2": "", "file2_name": null, "address": "", "fiscal_letter": "", "mission": "", "founded": null, "fiscal_telephone": null, "email_address": "", "city": "Portland", "file3_type": null, "amount_requested": null, "zip": "", "grant_cycle": null, "support_type": "", "state": "Oregon", "project_budget": "2040", "fiscal_letter_type": null, "scoring_bonus_poc": true, "fiscal_letter_name": null, "file3": "", "website": null, "narrative1": "", "start_year": "", "narrative3": "", "narrative4": "", "narrative5": "", "narrative6": null, "screening_status": 10, "fax_number": null, "budget_last": null, "file2_type": null, "file1_name": null, "submission_time": "3-2-1988", "fiscal_email": null, "narrative2": "", "grant_period": "", "previous_grants": "", "grant_request": "5-2-1988", "fiscal_person": null, "fiscal_org": null, "project_title": null, "budget_current": null, "scoring_bonus_geo": false, "fiscal_address": null, "telephone_number": "", "organization": "Potatoes", "contact_person": "", "file3_name": null, "ein": ""}}];
-
-                    //alert('Number of Objects : ' + arrayOfObjects.length);
-
+                /*
                     for (var i = 0; i < arrayOfObjects.length; i++) {
                         var object = arrayOfObjects[i];
 
@@ -59,6 +55,7 @@
                         $("<td><span>" + object.fields.state + "</td></span>").appendTo(row);
                         $("<td><span>" + object.fields.scoring_bonus_poc + "</td></span>").appendTo(row);
                     }
+                    */
             </script>
         </div>
     </body>
